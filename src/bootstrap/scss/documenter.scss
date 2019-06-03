@@ -1,0 +1,572 @@
+/* The following variables are part of the public API of the Documenter theme. */
+$body-bg: #ffffff !default;
+$body-color: #222222 !default;
+
+$primary: #2980b9 !default;
+$secondary: #e83e8c !default;
+$light: #fafafa !default;
+$dark: #c9c9c9 !default;
+$success: #36e036 !default;
+$info: #2cc8f7 !default;
+$tip: #36e036 !default;
+/* The theme also uses the following variables, but we use the Bootstrap defaults */
+// $success:       $green !default;
+// $info:          $cyan !default;
+// $warning:       $yellow !default;
+// $danger:        $red !default;
+
+$code-color: $secondary !default;
+
+/* Sets up the color scheme of the sidebar.
+ *
+ * We use a slightly different color for the text in the sidebar ($sidebar-color), so that
+ * the contrast ould be slightly lower there.
+ *
+ * FIXME: what about other parts of the sidebar?
+ *
+ * $sidebar-shadow-color sets the color of the gradient on the right side of the sidebar.
+ * Set this to * $sidebar-background-color if you're not a big fan of the gradient.
+ */
+$sidebar-color: #404040 !default;
+$sidebar-background-color: $light !default;
+$sidebar-shadow-color: scale-color($sidebar-background-color, $lightness: -25%) !default;
+
+/* Fonts. FIXME: Check if we can rely on @import here. */
+@import url("https://fonts.googleapis.com/css?family=Lato|Roboto+Mono");
+$font-family-sans-serif: 'Lato', 'Helvetica Neue', Arial, sans-serif !default;
+$font-family-monospace: 'Roboto Mono', Monaco, courier, monospace !default;
+
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+
+/* This is the end of the public API. Everything below may change between versions. */
+
+/* Overriding some Bootstrap defaults etc. */
+$breadcrumb-padding-x: 0 !default;
+$blockquote-font-size: 0.95*$font-size-base !default;
+$blockquote-padding-left: 1.5rem !default;
+
+/* Adding tip into the list of theme colors. */
+$theme-colors: () !default;
+$theme-colors: map-merge(("tip": $tip), $theme-colors);
+
+@import 'bootstrap/functions';
+@import 'bootstrap/variables';
+@import "bootstrap/mixins";
+@import "bootstrap/root";
+@import "bootstrap/reboot";
+
+/* Font Awesome 5 mixin. Can be included in any rule that should render Font Awesome icons. */
+@mixin font-awesome {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+$sidebar-width: 20rem;
+/* max-width of the logo image */
+$sidebar-logo-width: 0.9 * $sidebar-width;
+/* $sidebar-title-width sets the maximum width of the `sitename` string in the sidebar.
+ * If the rendered string ends up being longer than this, a JS widget will rescale the
+ * font to match this width. It should be slightly less than the sidebar width, to allow
+ * for some padding. If the rendered string is shorter than this, the JS does not resize
+ * anything and the text it keeps its default font size.
+ */
+$sidebar-title-width: 0.9 * $sidebar-width;
+$sidebar-title-font-size: 1.60rem;
+
+$sidebar-hover-color: $sidebar-background-color !default;
+$sidebar-hover-bg: scale-color($sidebar-background-color, $lightness: -65%) !default;
+$sidebar-current-bg: $body-bg !default;
+$sidebar-internal-bg: scale-color($sidebar-background-color, $lightness: -15%) !default;
+$sidebar-internal-hover-bg: scale-color($sidebar-background-color, $lightness: -25%) !default;
+
+$footnote-color: theme-color-level(dark, 5) !default;
+
+/* Main text elements */
+pre {
+    // background-color: theme-color-level(light, -3);
+    background-color: $light;
+    border: $border-width solid $dark;
+    border-radius: $border-radius;
+    padding: 0.5em;
+    overflow: auto;
+}
+
+.blockquote {
+  padding-left: $blockquote-padding-left;
+}
+
+/* Alternative! */
+h1, h2, h3, h4, h5, h6 {
+  .heading-anchor {
+    visibility: hidden;
+    vertical-align: middle;
+    margin-left: 0.5em;
+    font-size: 0.8rem;
+
+    &::before {
+      @include font-awesome;
+      content: "\f0c1";
+    }
+  }
+
+  &:hover .heading-anchor {
+    visibility: visible;
+  }
+}
+
+/* Admonitions */
+/*
+ * Admonitions
+ *
+ * Colors (title, body)
+ * warning: #f0b37e #ffedcc (orange)
+ * note:    #6ab0de #e7f2fa (blue)
+ * tip:     #1abc9c #dbfaf4 (green)
+*/
+.admonition {
+    border-radius: 3px;
+    background-color: #eeeeee;
+    margin-bottom: $paragraph-margin-bottom;
+}
+
+.admonition-title {
+    border-radius: 3px 3px 0 0;
+    background-color: #9b9b9b;
+    padding: 0.15em 0.5em;
+}
+
+.admonition-text {
+    padding: 0.5em;
+}
+
+.admonition-text > :first-child {
+    margin-top: 0;
+}
+
+.admonition-text > :last-child {
+    margin-bottom: 0;
+}
+
+.admonition > .admonition-title:before {
+    @include font-awesome;
+    margin-right: 5px;
+    content: "\f06a";
+}
+
+.admonition.warning {
+  background-color: theme-color-level(warning, -5);
+  > .admonition-title {
+    background-color: theme-color-level(warning, 2);
+  }
+}
+
+.admonition.note {
+  background-color: theme-color-level(info, -5);
+  > .admonition-title {
+    background-color: theme-color-level(info, 2);
+  }
+}
+
+.admonition.tip {
+  background-color: theme-color-level(tip, -5);
+  > .admonition-title {
+    background-color: theme-color-level(tip, 2);
+  }
+}
+
+// .admonition.note > .admonition-title {
+//     background-color: #6ab0de;
+// }
+//
+// .admonition.note {
+//     background-color: #e7f2fa;
+// }
+//
+// .admonition.tip > .admonition-title {
+//     background-color: #1abc9c;
+// }
+//
+// .admonition.tip {
+//     background-color: #dbfaf4;
+// }
+
+/* Headers in admonitions, footnotes, docstrings and blockquotes */
+.admonition, article section.docstring, .footnote {
+  h1 {
+    font-weight: bold;
+    font-size: 1.25em;
+  }
+  h2 {
+    font-weight: bold;
+    font-size: 1.10em;
+  }
+  h3, h4, h5, h6 {
+    font-weight: bold;
+    font-size: 1em;
+  }
+}
+
+/* Footnotes */
+ul.footnotes {
+  list-style: none;
+  padding: 0;
+  padding-top: 0.8rem;
+  border-top: 1px solid $dark;
+  font-size: $font-size-base * 0.8;
+  color: $footnote-color;
+
+  li {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  li.footnote {
+    > * {
+      padding-left: 1rem;
+    }
+    .footnote-anchor {
+      padding-left: 0;
+    }
+  }
+
+  li.footnote-inline {
+    .footnote-anchor {
+      display: inline;
+    }
+  }
+
+  li.footnote-inline .footnote-anchor {
+    display: inline;
+  }
+
+  dt {
+    font-weight: $font-weight-bold;
+  }
+}
+
+// sup.footnote-reference {
+//   a {}
+// }
+
+/* Docstrings/ */
+
+article.docstring {
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  margin-bottom: $paragraph-margin-bottom;
+
+  header {
+    padding: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 1em;
+  }
+
+  section, footer {
+    padding: 0.5rem;
+  }
+
+  .docstring-binding {
+    color: $body-color;
+    font-weight: bold;
+  }
+
+  .docstring-category {
+    font-style: italic;
+  }
+
+  a.source-link {
+    display: block;
+    font-weight: bold;
+    text-align: right;
+  }
+}
+
+/* Main layout */
+#body {
+  max-width: 50rem; // FIXME: make into a variable
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+
+  transition: all 0.5s;
+
+  @include media-breakpoint-up(md) {
+    margin-left: 21rem;
+  }
+
+  /* Main article header */
+  #pageheader {
+    display: flex;
+    background-color: $body-bg;
+    border-bottom: $border-width solid $dark;
+
+    position: sticky;
+    top: 0;
+    @include media-breakpoint-up(md) {
+      position: relative;
+    }
+
+    /* For Headroom.js */
+    transition-property: top;
+    -webkit-transition-property: top; /* Safari */
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    &.headroom--unpinned.headroom--not-top.headroom--not-bottom {
+      top: -4rem;
+      transition-duration: 0.7s;
+      -webkit-transition-duration: 0.7s; /* Safari */
+    }
+
+    // FIXME: are there any variables I can override instead?
+    ol.breadcrumb {
+      flex-grow: 2;
+      margin-top: auto;
+      margin-bottom: auto;
+      background-color: initial;
+    }
+
+    .edit-page {
+      display: block;
+      text-align: right;
+      margin-top: auto;
+      margin-bottom: auto;
+
+      .edit-page-text {
+        display: none;
+        @include media-breakpoint-up(md) {
+          display: initial;
+        }
+      }
+    }
+
+    #menu-button {
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 1rem;
+
+      /* The button is only displayed in "mobile mode". */
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+    }
+  }
+
+  > footer {
+    border-top: 1px solid $dark;
+    min-height: 3rem;
+
+    .colophon {
+      font-size: 60%;
+      text-align: center;
+      margin: 0.5rem 0;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* Sidebar */
+#sidebar {
+  display: flex;
+  flex-flow: column;
+  position: fixed;
+  top: 0;
+  /* In the default mobile mode, the sidebar is off on the left */
+  width: $sidebar-width;
+  left: -$sidebar-width;
+  height: 100%;
+  z-index: 2; // make sure it's on top of the main page content
+
+  padding: 0.5rem 0 0 0;
+  box-shadow: inset -14px 0px 5px -12px $sidebar-shadow-color;
+
+  color: $sidebar-color;
+  background-color: $sidebar-background-color;
+
+  transition: all 0.5s;
+
+  &.show {
+    // display: flex;
+    left: 0;
+  }
+
+  @include media-breakpoint-up(md) {
+    // If the screen is wide enough, we always display the sidebar.
+    // display: flex;
+    left: 0;
+  }
+
+  img.logo {
+    display: block;
+    margin: 0 auto;
+    max-width: $sidebar-logo-width;
+  }
+
+  #pagetitle {
+    @include font-size($sidebar-title-font-size);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    /* The padding works around the problem that when you set overflow: hidden, part
+     * of the <h1> gets hidden away.
+     */
+    padding: 0.5rem 0;
+
+    #pagetitle-overflow-box {
+      max-width: $sidebar-title-width;
+      transition: all 0.3s;
+    }
+  }
+
+  #search-form {
+    // margin: 1rem;
+    input {
+      display: block;
+      margin: 0 auto;
+      font-size: .83em;
+      height: 2em;
+      width: 90%;
+      width: calc(100% - 5em);
+      padding: 0 1em;
+      border: 1px solid #c9c9c9; // FIXME
+      border-radius: 1em; // FIXME
+    }
+  }
+
+  #toc {
+    * {
+        margin: 0;
+    }
+
+    margin-top: 0.5rem;
+    min-height: 2em;
+    overflow-y: auto;
+
+    > li:last-child {
+      padding-bottom: 1em;
+    }
+
+    &, ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    /* The .internal class gets applied to the list of in-page headings. */
+    ul.internal {
+        background-color: $sidebar-internal-bg;
+        box-shadow: inset -14px 0px 5px -12px rgb(210,210,210);
+        list-style: none;
+
+        a {
+            display: block;
+        }
+
+        /* We only apply :hover coloring to sidebar elements that are clickable. */
+        a:hover {
+          color: $sidebar-color;
+          background-color: $sidebar-internal-hover-bg;
+        }
+
+        li.toplevel {
+          border-top: 1px solid #909090;
+          font-weight: bold;
+        }
+
+        li.toplevel:first-child {
+          border-top: none;
+        }
+    }
+
+    .toctext {
+        color: inherit;
+        display: block;
+    }
+
+    /* We only apply :hover coloring to sidebar elements that are clickable. */
+    a:hover {
+        color: $sidebar-hover-color;
+        background-color: $sidebar-hover-bg;
+        text-decoration: none;
+    }
+
+    .toctext {
+        padding-top: 0.3em;
+        padding-bottom: 0.3em;
+        padding-right: 1em;
+    }
+
+    & .toctext {
+        padding-left: 1em;
+    }
+
+    & ul .toctext {
+        padding-left: 2em;
+    }
+
+    & ul ul .toctext {
+        padding-left: 3em;
+    }
+
+    li.current > .toctext {
+      font-weight: bold;
+      background-color: $body-bg;
+      border-top: $border-width solid $sidebar-shadow-color;
+      border-bottom: $border-width solid $sidebar-shadow-color;
+    }
+
+    /* Setting up a nicer theme style for the scrollbar */
+    overflow-y: auto;
+    -webkit-overflow-scroll: touch;
+    &::-webkit-scrollbar {
+        width: .4em;
+        background: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background: $dark;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        border-radius: 5px;
+        background: darken($dark, 10%);
+    }
+  }
+}
+
+/* Import the rest of Bootstrap (list from bootstrap.scss) */
+@import "bootstrap/type";
+@import "bootstrap/images";
+@import "bootstrap/code";
+// @import "bootstrap/grid";
+@import "bootstrap/tables";
+// @import "bootstrap/forms";
+@import "bootstrap/buttons";
+// @import "bootstrap/transitions";
+// @import "bootstrap/dropdown";
+// @import "bootstrap/button-group";
+// @import "bootstrap/input-group";
+// @import "bootstrap/custom-forms";
+// @import "bootstrap/nav";
+// @import "bootstrap/navbar";
+// @import "bootstrap/card";
+@import "bootstrap/breadcrumb";
+// @import "bootstrap/pagination";
+// @import "bootstrap/badge";
+// @import "bootstrap/jumbotron";
+// @import "bootstrap/alert";
+// @import "bootstrap/progress";
+// @import "bootstrap/media";
+// @import "bootstrap/list-group";
+// @import "bootstrap/close";
+// @import "bootstrap/toasts";
+// @import "bootstrap/modal";
+// @import "bootstrap/tooltip";
+// @import "bootstrap/popover";
+// @import "bootstrap/carousel";
+// @import "bootstrap/spinners";
+@import "bootstrap/utilities";
+// @import "bootstrap/print";

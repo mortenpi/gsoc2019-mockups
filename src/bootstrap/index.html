@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bootstrap · Documenter front end mockup</title>
+
+  <link rel="canonical" href="https://juliadocs.github.io/Documenter.jl/stable/index.html">
+
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"> -->
+
+  <!-- Must include 3 different stylesheets for Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/fontawesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/solid.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/brands.min.css" rel="stylesheet" type="text/css">
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.2/katex.min.css" rel="stylesheet" type="text/css">
+  <link id="themecss" href="documenter.css" rel="stylesheet" type="text/css">
+
+  <!-- Fonts -->
+  <!-- <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"/> -->
+
+  <!-- <script>
+    documenterBaseURL="."
+  </script> -->
+
+  <script data-main="documenter" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
+  <!-- <link href="assets/documenter.css" rel="stylesheet" type="text/css"> -->
+  <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
+</head>
+<body>
+  <nav id="sidebar">
+    <a href=""><img class="logo" src="logo.svg" alt="Documenter.jl logo"></a>
+    <!-- <h1 id="pagetitle">Documenter mockup with Bootstrap</h1> -->
+    <h1 id="pagetitle"><span id="pagetitle-overflow-box">Really-really long package name (like, very long)</span></h1>
+
+    <select id="version-selector" onchange="window.location.href=this.value" style="display: none;"></select>
+
+    <form class="search" id="search-form" action="#" name="search-form">
+      <input id="search-query" name="q" type="text" placeholder="Search the docs" />
+    </form>
+
+    <ul id="toc">
+      <li class="current"><a class="toctext" href="">Home</a>
+        <ul class="internal">
+          <li><a class="toctext" href="#Package-Features-1">Package Features</a></li>
+          <li><a class="toctext" href="#Manual-Outline-1">Manual Outline</a></li>
+          <li><a class="toctext" href="#Library-Outline-1">Library Outline</a></li>
+        </ul>
+      </li>
+      <li><span class="toctext">Manual</span>
+        <ul>
+          <li><a class="toctext" href="man/guide/">Guide</a></li>
+          <li><a class="toctext" href="man/examples/">Examples</a></li>
+          <li><a class="toctext" href="man/syntax/">Syntax</a></li>
+          <li><a class="toctext" href="man/doctests/">Doctests</a></li>
+          <li><a class="toctext" href="man/latex/"><span>$\LaTeX$</span> Syntax</a></li>
+          <li><a class="toctext" href="man/hosting/">Hosting Documentation</a></li>
+          <li><a class="toctext" href="man/other-formats/">Other Output Formats</a></li>
+        </ul>
+      </li>
+      <li><span class="toctext">Library</span>
+        <ul>
+          <li><a class="toctext" href="lib/public/">Public</a></li>
+          <li><a class="toctext" href="lib/internals/">Internals</a></li>
+        </ul>
+      </li>
+      <li><a class="toctext" href="contributing/">Contributing</a></li>
+      <li><span class="toctext">Library</span>
+        <ul>
+          <li><a class="toctext" href="lib/public/">Public</a></li>
+          <li><a class="toctext" href="lib/internals/">Internals</a></li>
+        </ul>
+      </li>
+      <li><a class="toctext" href="contributing/">Contributing</a></li>
+    </ul>
+  </nav>
+
+  <!--------------------------------------------------------------------------------------->
+  <div id="body">
+    <nav id="pageheader">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="">Home</a></li>
+        <li class="breadcrumb-item"><a href="">This page</a></li>
+        <li class="breadcrumb-item"><a href="">Has a</a></li>
+        <li class="breadcrumb-item"><a href="">Rather long</a></li>
+        <li class="breadcrumb-item"><a href="">Breadcrumb</a></li>
+      </ol>
+      <a class="edit-page" href="#">
+        <span class="fab"></span>
+        <span class="edit-page-text">Edit on GitHub</span>
+      </a>
+      <a id="menu-button" class="fa fa-bars" href="#"></a>
+    </nav>
+
+    <article id="document">
+    <h1 id="link-1">
+      Page <code>h1</code> heading
+      <a class="heading-anchor" href="#link-1" title="Permalink"></a>
+    </h1>
+
+    <p>
+      <em>
+        A <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter</a> front end mockup with the
+        <a href="https://getbootstrap.com/">Bootstrap framework</a>.
+      </em>
+    </p>
+
+    <div class="admonition note">
+      <div class="admonition-title">Developer tools</div>
+      <div class="admonition-text">
+        <p>Try pressing <kbd><kbd>Ctrl</kbd> + <kbd>y</kbd></kbd>!</p>
+      </div>
+    </div>
+
+    <p>A package for building documentation from docstrings and markdown files.</p>
+
+    <h2 id="link-2">
+      Package Features
+      <a class="heading-anchor" href="#link-2" title="Permalink"></a>
+    </h2>
+
+    <ul>
+      <li>Write all your documentation in <a href="#">Markdown</a>.</li>
+      <li>Minimal configuration.</li>
+      <li>Supports Julia <code>0.7</code> and <code>1.0</code>.</li>
+      <li>Doctests Julia code blocks.</li>
+      <li>Cross references for docs and section headers.</li>
+      <li><a href="#"><span>$\LaTeX$</span> syntax</a> support.</li>
+      <li>Checks for missing docstrings and incorrect cross references.</li>
+      <li>Generates tables of contents and docstring indexes.</li>
+      <li>Automatically builds and deploys docs from Travis to GitHub Pages.</li>
+    </ul>
+    <p>
+      The <a href="#">Package Guide</a> provides a tutorial explaining how to get started using Documenter.
+      Some examples of packages using Documenter can be found on the <a href="#">Examples</a> page.
+      See the <a href="#main-index-1">Index</a> for the complete list of documented functions and types.
+    </p>
+
+    <h2 id="link-3">
+      Library Outline
+      <a class="heading-anchor" href="#link-3" title="Permalink"><i class="fas fa-link"></i></a>
+    </h2>
+    <p>Documenter-generated lists (<code>@index</code>, <code>@contents</code> etc.):</p>
+    <ul>
+      <li><a href="lib/public/#Public-Documentation-1">Public Documentation</a></li>
+      <li style="list-style: none; display: inline">
+        <ul>
+          <li><a href="lib/public/#Contents-1">Contents</a></li>
+          <li><a href="lib/public/#Index-1">Index</a></li>
+          <li><a href="lib/public/#Public-Interface-1">Public Interface</a></li>
+          <li><a href="lib/public/#DocumenterTools-1">DocumenterTools</a></li>
+        </ul>
+      </li>
+      <li><a href="lib/internals/#Internal-Documentation-1">Internal Documentation</a></li>
+      <li style="list-style: none; display: inline">
+        <ul>
+          <li><a href="lib/internals/#Contents-1">Contents</a></li>
+          <li><a href="lib/internals/#Index-1">Index</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>
+      The simple stuff
+      <a class="heading-anchor" href="#link-3" title="Permalink"></a>
+    </h2>
+    <p>You can use all the usual markdown syntax, such as <strong>bold text</strong>and <em>italic text</em>.
+      You can also write inline code that, unfortunately, does not get highlighted: <code>foo()</code>.
+    </p>
+    <p>Need to write more code? No worries, code blocks have you covered:</p>
+    <pre><code class="language-none">This is a code block.
+...
+This is a code block.</code></pre>
+    <p>Note that by default (<kbd>ctrl</kbd>) no highlighting gets applied. To highlight as Julia,  <code>\```julia</code></p>
+    <pre><code class="language-julia">functio foo(x::Integer)
+@show x + 1
+end</code></pre>
+
+    <p>If you need math, you have both inline (<span>$A x^2 + B x + C = 0$</span>) and display equations available to you:</p>
+    <div class="equation-display">\[x_{1,2} = \frac{-B \pm \sqrt{B^2 - 4 A C}}{2A}\]</div>
+    <p>Finally, admonitions for notes, warnings and such:</p>
+    <div class="admonition warning">
+      <div class="admonition-title">Admonition: class <code>warning</code></div>
+      <div class="admonition-text">
+        <p>Nullam a magna porttitor, consequat justo eget, placerat purus. Sed in leo ligula. Phasellus mollis neque vel erat laoreet aliquam. Donec elementum tortor ut nunc posuere, id molestie mauris hendrerit.</p>
+        <pre><code class="language-none">foo bar baz</code></pre>
+        <p>Nulla eu turpis eget diam ultricies feugiat.</p>
+        <p>
+          <strong>Note.</strong>
+          You can &#39;t have at-blocks, docstrings, doctests etc. in an admonition.
+        </p>
+      </div>
+    </div>
+
+    <div class="admonition note">
+      <div class="admonition-title">Admonition: class <code>note</code></div>
+      <div class="admonition-text">
+        <p>Headings are reasonably scaled in admonitions:</p>
+        <h1>Heading 1</h1>
+        <p>Nullam a magna porttitor, consequat justo eget, placerat purus.</p>
+        <h2>Heading 2</h2>
+        <p>Nullam a magna porttitor, consequat justo eget, placerat purus.</p>
+        <h3>Heading 3</h3>
+        <p>Nullam a magna porttitor, consequat justo eget, placerat purus.</p>
+        <h4>Heading 4</h4>
+        <p>Nullam a magna porttitor, consequat justo eget, placerat purus.</p>
+        <h5>Heading 5</h5>
+        <p>Nullam a magna porttitor, consequat justo eget, placerat purus.</p>
+        <h6>Heading 6</h6>
+        <p>Nullam a magna porttitor, consequat justo eget, placerat purus.</p>
+      </div>
+    </div>
+
+    <div class="admonition tip">
+      <div class="admonition-title">Admonition: class <code>tip</code></div>
+      <div class="admonition-text">
+        <p>Nullam a magna porttitor, consequat justo eget, placerat purus.</p>
+      </div>
+    </div>
+
+    <div class="admonition">
+      <div class="admonition-title">Default admonition</div>
+      <div class="admonition-text">
+        <p>Nullam a magna porttitor, consequat justo eget, placerat purus.</p>
+      </div>
+    </div>
+
+    <p>Blockquotes:</p>
+    <blockquote class="blockquote">
+      <p>Momentum genitæ æquatur momentis laterum singulorum generantium in eorundem laterum indices dignitatum & coefficientia continue ductis.</p>
+      <p>Momentum genitæ æquatur momentis laterum singulorum generantium in eorundem laterum indices dignitatum & coefficientia continue ductis.</p>
+      <!-- <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer> -->
+    </blockquote>
+
+    <p>
+      Documenter also supports footnotes.
+      <sup class="footnote-reference"><a href="#footnote-Clarke61">[Clarke61]</a></sup>
+      The footnote definitions are all collected at the end of the page.
+    </p>
+
+    <h2 id="Docstrings-1">
+        Docstrings
+        <a class="heading-anchor" href="#Docstrings-1" title="Permalink"></a>
+    </h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia enim libero, sed sodales mi interdum at. Docstringum includet:</p>
+
+  <article class="docstring">
+    <header>
+      <a class="docstring-binding" id="Distributed.nprocs" href="#"><code>Distributed.nprocs</code></a>
+      —
+      <span class="docstring-category">Function</span>.
+    </header>
+    <section>
+      <div>
+        <pre><code class="language-none">nprocs()</code></pre>
+        <p>Get the number of available processes.</p>
+        <p><strong>Examples</strong></p>
+        <pre><code class="language-julia-repl">julia> nprocs()
+3
+
+julia> workers()
+5-element Array{Int64,1}:
+ 2
+ 3</code></pre>
+      </div>
+      <footer>
+        <a class="source-link" target="_blank" href="#">source</a>
+      </footer>
+    </section>
+  </article>
+
+<p>You can also have multiple docstrings attached to the same signature:</p>
+
+  <article class="docstring">
+    <header>
+      <a class="docstring-binding" id="Distributed.interrupt" href="#">
+        <code>Distributed.interrupt</code>
+      </a> — <span class="docstring-category">Function</span>.
+    </header>
+    <section>
+      <pre><code class="language-none">interrupt(pids::Integer...)</code></pre>
+      <p>Interrupt the current executing task on the specified workers. This is equivalent to pressing Ctrl-C on the local machine. If no arguments are given, all workers are interrupted.</p>
+      <footer>
+        <a class="source-link" target="_blank" href="#">source</a>
+      </footer>
+    </section>
+    <section>
+      <pre><code class="language-none">interrupt(pids::AbstractVector=workers())</code></pre>
+      <p>Interrupt the current executing task on the specified workers. This is equivalent to pressing Ctrl-C on the local machine. If no arguments are given, all workers are interrupted.</p>
+      <footer>
+        <a class="source-link" target="_blank" href="#">source</a>
+      </footer>
+    </section>
+  </article>
+
+  <p>Vestibulum tincidunt metus neque, in vehicula lorem egestas commodo. Fusce sit amet dictum augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nam iaculis orci elit, ac euismod dolor dictum ut. Vestibulum eget molestie urna.</p>
+  <p>Donec ornare eros rhoncus velit accumsan, interdum egestas ligula congue. Etiam placerat mauris vitae eleifend facilisis. Aliquam ornare, quam et faucibus interdum, massa lectus pretium erat, in pharetra mi odio quis nulla. Phasellus sollicitudin blandit magna sed maximus. Aenean luctus ipsum tortor, vel porttitor erat condimentum sed. Quisque porta sed nisl ut gravida. Vestibulum elementum ullamcorper placerat. Sed tempus nibh tellus, porta porta risus egestas nec.</p>
+
+<h2 id="Doctesting-example-1">
+  Doctesting example
+  <a class="heading-anchor" href="#Doctesting-example-1" title="Permalink"></a>
+</h2>
+<pre><code class="language-julia">2 + 2
+# output
+4</code></pre>
+
+<h2 id="Running-interactive-code-1">
+  Running interactive code
+  <a class="heading-anchor" href="#Running-interactive-code-1" title="Permalink"></a>
+</h2>
+<pre class="input"><code class="language-julia">methods(methods)</code></pre>
+<pre class="output"><samp># 3 methods for generic function "methods":
+[1] methods(f::Core.Builtin) in Base at reflection.jl:830
+[2] methods(f) in Base at reflection.jl:842
+[3] methods(f, t) in Base at reflection.jl:822
+</samp></pre>
+
+  <p>
+    The text output from a code snippet is wrapped in a <code>&lt;pre&gt;&lt;samp&gt;</code> tags instead
+    (as opposed to <code>&lt;pre&gt;&lt;code&gt;</code>, with <code>language-none</code> applied).
+
+  <h2 if="Tabular-Information-1">
+    Tabular Information
+    <a class="heading-anchor" href="#Tabular-Information-1" title="Permalink"></a>
+  </h2>
+
+  <p>No custom styling necessary for tables.</p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Signed?</th>
+        <th>Number of bits</th>
+        <th>Smallest value</th>
+        <th>Largest value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="../../base/numbers/#Core.Int8"><code>Int8</code></a></td>
+        <td>✓</td>
+        <td>8</td>
+        <td>-2^7</td>
+        <td>2^7 - 1</td>
+      </tr>
+      <tr>
+        <td><a href="../../base/numbers/#Core.UInt8"><code>UInt8</code></a></td>
+        <td></td>
+        <td>8</td>
+        <td>0</td>
+        <td>2^8 - 1</td>
+      </tr>
+      <tr>
+        <td><a href="../../base/numbers/#Core.Int16"><code>Int16</code></a></td>
+        <td>✓</td>
+        <td>16</td>
+        <td>-2^15</td>
+        <td>2^15 - 1</td>
+      </tr>
+      <tr>
+        <td><a href="../../base/numbers/#Core.UInt16"><code>UInt16</code></a></td>
+        <td></td>
+        <td>16</td>
+        <td>0</td>
+        <td>2^16 - 1</td>
+      </tr>
+      <tr>
+        <td><a href="../../base/numbers/#Core.Int32"><code>Int32</code></a></td>
+        <td>✓</td>
+        <td>32</td>
+        <td>-2^31</td>
+        <td>2^31 - 1</td>
+      </tr>
+      <tr>
+        <td><a href="../../base/numbers/#Core.UInt32"><code>UInt32</code></a></td>
+        <td></td>
+        <td>32</td>
+        <td>0</td>
+        <td>2^32 - 1</td>
+      </tr>
+      <tr>
+        <td><a href="../../base/numbers/#Core.Int64"><code>Int64</code></a></td>
+        <td>✓</td>
+        <td>64</td>
+        <td>-2^63</td>
+        <td>2^63 - 1</td>
+      </tr>
+      <tr>
+        <td><a href="../../base/numbers/#Core.UInt64"><code>UInt64</code></a></td>
+        <td></td>
+        <td>64</td>
+        <td>0</td>
+        <td>2^64 - 1</td>
+      </tr>
+      <tr>
+        <td><a href="../../base/numbers/#Core.Int128"><code>Int128</code></a></td>
+        <td>✓</td>
+        <td>128</td>
+        <td>-2^127</td>
+        <td>2^127 - 1</td>
+      </tr>
+      <tr>
+        <td><a href="../../base/numbers/#Core.UInt128"><code>UInt128</code></a></td>
+        <td></td>
+        <td>128</td>
+        <td>0</td>
+        <td>2^128 - 1</td>
+      </tr>
+      <tr>
+        <td><a href="../../base/numbers/#Core.Bool"><code>Bool</code></a></td>
+        <td>N/A</td>
+        <td>8</td>
+        <td><code>false</code> (0)</td>
+        <td><code>true</code> (1)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>As the last thing on the page we'll collect all the footnote definitions, if there are any.</p>
+  <ul class="footnotes">
+    <li id="footnote-Clarke61" class="footnote-inline">
+      <div class="footnote-anchor">
+        <a href="#footnote-Clarke61">[Clarke61]</a>:
+      </div>
+      Arthur C. Clarke, <em>Profiles of the Future</em> (1961): Clarke's Third Law.
+    </li>
+    <li class="footnote">
+      <div class="footnote-anchor">
+        <a href="#footnote-Clarke61">[2]</a>
+      </div>
+      <p>
+        Footnotes can also consist of multiple block notes and are then rendered like this.
+        They can also contain other block level elements, like headings:
+      </p>
+      <h1>Headings in a footnote</h1>
+      <p>Arthur C. Clarke, <em>Profiles of the Future</em> (1961): Clarke's Third Law.</p>
+    </li>
+  </ul>
+
+</article>
+
+<footer>
+  <nav class="d-flex flex-wrap">
+    <a class="text-left" title="Previous" href="#">
+      &laquo;
+      Variables
+    </a>
+    <a class="ml-auto text-right" title="Next" href="#">
+      Mathematical Operations and Elementary Functions
+      &raquo;
+    </a>
+  </nav>
+
+  <div class="colophon">
+    <p>
+      Created with
+      <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a>
+      on <span class="colophon-date" title="Thu 30 May 21:01:04 NZST 2019">Thu 30 May 2019</span>
+    </p>
+    <p>
+      <!-- link to the repo / tag -->
+      <a href="#">a4f5521d</a>
+      —
+      <!-- link to the Travis build -->
+      <a href="#">JuliaDocs/Documenter.jl/212.5</a>
+    </p>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
