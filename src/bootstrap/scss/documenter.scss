@@ -3,19 +3,19 @@ $body-bg: #ffffff !default;
 $body-color: #222222 !default;
 
 $primary: #2980b9 !default;
-$secondary: #e83e8c !default;
-$light: #fafafa !default;
-$dark: #c9c9c9 !default;
+$secondary: #aaaaaa !default;
 $success: #36e036 !default;
 $info: #2cc8f7 !default;
 $tip: #36e036 !default;
+$light: #fafafa !default;
+$dark: #c9c9c9 !default;
 /* The theme also uses the following variables, but we use the Bootstrap defaults */
 // $success:       $green !default;
 // $info:          $cyan !default;
 // $warning:       $yellow !default;
 // $danger:        $red !default;
 
-$code-color: $secondary !default;
+$code-color: #e83e8c !default;
 
 /* Sets up the color scheme of the sidebar.
  *
@@ -27,9 +27,11 @@ $code-color: $secondary !default;
  * $sidebar-shadow-color sets the color of the gradient on the right side of the sidebar.
  * Set this to * $sidebar-background-color if you're not a big fan of the gradient.
  */
-$sidebar-color: #404040 !default;
+// $sidebar-color: #404040 !default;
+// $sidebar-color: $dark !default;
 $sidebar-background-color: $light !default;
 $sidebar-shadow-color: scale-color($sidebar-background-color, $lightness: -25%) !default;
+$sidebar-color: invert($sidebar-background-color) !default;
 
 /* Fonts. FIXME: Check if we can rely on @import here. */
 @import url("https://fonts.googleapis.com/css?family=Lato|Roboto+Mono");

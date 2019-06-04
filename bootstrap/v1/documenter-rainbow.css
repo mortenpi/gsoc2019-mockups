@@ -525,7 +525,7 @@ article.docstring {
   z-index: 2;
   padding: 0.5rem 0 0 0;
   box-shadow: inset -14px 0px 5px -12px #48abff;
-  color: #404040;
+  color: #4a2200;
   background-color: #b5ddff;
   transition: all 0.5s; }
   #sidebar.show {
@@ -583,7 +583,7 @@ article.docstring {
       #sidebar #toc ul.internal a {
         display: block; }
       #sidebar #toc ul.internal a:hover {
-        color: #404040;
+        color: #4a2200;
         background-color: #48abff; }
       #sidebar #toc ul.internal li.toplevel {
         border-top: 1px solid #909090;
@@ -740,7 +740,7 @@ mark,
 
 code {
   font-size: 87.5%;
-  color: #ECAC2A;
+  color: #e83e8c;
   word-break: break-word; }
   a > code {
     color: inherit; }

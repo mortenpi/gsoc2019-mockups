@@ -76,8 +76,9 @@ requirejs(['jquery'], function($) {
 
 
 require(['jquery', 'headroom', 'headroom-jquery'], function($, Headroom) {
-    window.Headroom = Headroom;
+    window.Headroom = Headroom; // work around buggy module loading?
     $(document).ready(function() {
+        // TODO: this needs to be reviewed
         var sidebar = $("#sidebar");
         $("nav.toc li.current a.toctext").click(function() {
             navtoc.toggleClass('show');

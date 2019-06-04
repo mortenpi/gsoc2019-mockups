@@ -54,8 +54,9 @@ define(["jquery"], function($) {
             <h1>Themes</h1>
             <ul>
             <li><button type="button" class="themepicker-button" data-themefile="documenter.css">Default</button></li>
-            <li><button type="button" class="themepicker-button" data-themefile="documenter-dark.css">Dark</button></li>
             <li><button type="button" class="themepicker-button" data-themefile="documenter-rainbow.css">Rainbow</button></li>
+            <li><button type="button" class="themepicker-button" data-themefile="darkly.css">Darkly</button></li>
+            <!--<li><button type="button" class="themepicker-button" data-themefile="documenter-dark.css">Dark</button></li>-->
             </ul>
           </div>
           <hr />
