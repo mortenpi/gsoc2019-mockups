@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Bootstrap · Documenter front end mockup</title>
+  <title>Bulma · Documenter front end mockup</title>
 
   <link rel="canonical" href="https://juliadocs.github.io/Documenter.jl/stable/index.html">
 
@@ -20,6 +20,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.2/katex.min.css" rel="stylesheet" type="text/css">
   <link id="themecss" href="documenter.css" rel="stylesheet" type="text/css">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
+
   <!-- Fonts -->
   <!-- <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"/> -->
 
@@ -31,11 +34,19 @@
   <!-- <link href="assets/documenter.css" rel="stylesheet" type="text/css"> -->
   <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
 </head>
-<body>
-  <nav id="sidebar">
-    <a href=""><img class="logo" src="logo.svg" alt="Documenter.jl logo"></a>
-    <!-- <h1 id="pagetitle">Documenter mockup with Bootstrap</h1> -->
-    <h1 id="pagetitle"><span id="pagetitle-overflow-box">Really-really long package name (like, very long)</span></h1>
+<body class="columns">
+  <nav class="column is-narrow" id="sidebar" style="width: 16rem;">
+    <header class="has-text-centered">
+      <a href="#">
+        <img class="image" src="logo.svg" title="Documenter.jl" alt="Documenter.jl logo">
+      </a>
+      <!-- <h1 id="pagetitle">Documenter mockup with Bootstrap</h1> -->
+      <h1 class="title" id="pagetitle">
+        <!-- <span id="pagetitle-overflow-box"> -->
+          Really-really long package name (like, very long)
+        <!-- </span> -->
+      </h1>
+    </header>
 
     <select id="version-selector" onchange="window.location.href=this.value" style="display: none;"></select>
 
@@ -43,91 +54,83 @@
       <input id="search-query" name="q" type="text" placeholder="Search the docs" />
     </form>
 
-    <ul id="toc">
-      <li class="current"><a class="toctext" href="">Home</a>
-        <ul class="internal">
-          <li><a class="toctext" href="#Package-Features-1">Package Features</a></li>
-          <li><a class="toctext" href="#Manual-Outline-1">Manual Outline</a></li>
-          <li><a class="toctext" href="#Library-Outline-1">Library Outline</a></li>
-        </ul>
-      </li>
-      <li><span class="toctext">Manual</span>
-        <ul>
-          <li><a class="toctext" href="man/guide/">Guide</a></li>
-          <li><a class="toctext" href="man/examples/">Examples</a></li>
-          <li><a class="toctext" href="man/syntax/">Syntax</a></li>
-          <li><a class="toctext" href="man/doctests/">Doctests</a></li>
-          <li><a class="toctext" href="man/latex/"><span>$\LaTeX$</span> Syntax</a></li>
-          <li><a class="toctext" href="man/hosting/">Hosting Documentation</a></li>
-          <li><a class="toctext" href="man/other-formats/">Other Output Formats</a></li>
-        </ul>
-      </li>
-      <li><span class="toctext">Library</span>
-        <ul>
-          <li><a class="toctext" href="lib/public/">Public</a></li>
-          <li><a class="toctext" href="lib/internals/">Internals</a></li>
-        </ul>
-      </li>
-      <li><a class="toctext" href="contributing/">Contributing</a></li>
-      <li><span class="toctext">Library</span>
-        <ul>
-          <li><a class="toctext" href="lib/public/">Public</a></li>
-          <li><a class="toctext" href="lib/internals/">Internals</a></li>
-        </ul>
-      </li>
-      <li><a class="toctext" href="contributing/">Contributing</a></li>
-    </ul>
+    <!-- <aside class="menu"> -->
+      <p class="menu-label">Table of contents</p>
+      <ul class="menu-list">
+        <li><a href="#">Home</a></li>
+        <li>
+          <a class="inactive">Manual</a>
+          <ul>
+            <li>
+            <li><a class="toctext" href="man/examples/">Examples</a></li>
+              <a class="is-active" href="man/guide/">Guide</a>
+              <ul class="internal">
+                <li><a class="toctext" href="#Package-Features-1">Package Features</a></li>
+                <li><a class="toctext" href="#Manual-Outline-1">Manual Outline</a></li>
+                <li><a class="toctext" href="#Library-Outline-1">Library Outline</a></li>
+              </ul>
+            </li>
+            <li><a class="toctext" href="man/syntax/">Syntax</a></li>
+            <li><a class="toctext" href="man/doctests/">Doctests</a></li>
+            <li><a class="toctext" href="man/latex/"><span>$\LaTeX$</span> Syntax</a></li>
+            <li><a class="toctext" href="man/hosting/">Hosting Documentation</a></li>
+            <li><a class="toctext" href="man/other-formats/">Other Output Formats</a></li>
+          </ul>
+        </li>
+        <li>
+          <a>Library</a>
+          <ul>
+            <li><a class="toctext" href="lib/public/">Public</a></li>
+            <li><a class="toctext" href="lib/internals/">Internals</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Contributing</a></li>
+      </ul>
+    <!-- </aside> -->
   </nav>
 
   <!--------------------------------------------------------------------------------------->
-  <div id="body">
-    <nav id="pageheader">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="">Home</a></li>
-        <li class="breadcrumb-item"><a href="">This page</a></li>
-        <li class="breadcrumb-item"><a href="">Has a</a></li>
-        <li class="breadcrumb-item"><a href="">Rather long</a></li>
-        <li class="breadcrumb-item"><a href="">Breadcrumb</a></li>
-      </ol>
-      <a class="edit-page" href="#">
+  <div class="column" id="body">
+    <header class="columns" id="pageheader">
+      <nav class="breadcrumb column">
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="">This page</a></li>
+          <li><a href="">Has a</a></li>
+          <li><a href="">Rather long</a></li>
+          <li><a href="">Breadcrumb</a></li>
+        </ul>
+      </nav>
+      <a class="column is-2 edit-page" href="#" style="width: 10rem;">
         <span class="fab"></span>
-        <span class="edit-page-text">Edit on GitHub</span>
+        <span class="is-hidden-mobile">Edit on GitHub</span>
       </a>
-      <a id="menu-button" class="fa fa-bars" href="#"></a>
-    </nav>
+      <!-- <a id="menu-button" class="fa fa-bars" href="#"></a> -->
+    </header>
 
-    <article id="document">
+    <article class="content" id="document">
     <h1 id="link-1">
       Page <code>h1</code> heading
       <a class="heading-anchor" href="#link-1" title="Permalink"></a>
     </h1>
 
-    <p>Large video:</p>
-    <video controls>
-      <source src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Wikit%C3%A1bor_v_techm%C3%A1nii.webm" type="video/webm">
-    </video>
-
-    <p>Small video:</p>
-    <video controls src="https://upload.wikimedia.org/wikipedia/commons/0/00/Solstice_Timelapse_-_Day_and_Night_in_the_Midnight_Sun.webm"></video>
-
-    <p>No video video:</p>
-    <video controls src="index.html" type="video/foobar">AAA</video>
-
     <p>
       <em>
         A <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter</a> front end mockup with the
-        <a href="https://getbootstrap.com/">Bootstrap framework</a>.
+        <a href="https://bulma.io/">Bulma framework</a>.
       </em>
     </p>
 
-    <div class="admonition note">
-      <div class="admonition-title">Developer tools</div>
-      <div class="admonition-text">
+    <div class="card">
+      <div class="card-header">
+        <p class="card-header-title">Developer tools</p>
+      </div>
+      <div class="card-content">
         <p>Try pressing <kbd><kbd>Ctrl</kbd> + <kbd>y</kbd></kbd>!</p>
       </div>
     </div>
 
-    <p>A package for building documentation from docstrings and markdown files.</p>
+    <p>Note that this page simply loads the default Bulma CSS, so there is no custom component styling.</p>
 
     <h2 id="link-2">
       Package Features
@@ -153,7 +156,7 @@
 
     <h2 id="link-3">
       Library Outline
-      <a class="heading-anchor" href="#link-3" title="Permalink"><i class="fas fa-link"></i></a>
+      <a class="heading-anchor" href="#link-3" title="Permalink"></a>
     </h2>
     <p>Documenter-generated lists (<code>@index</code>, <code>@contents</code> etc.):</p>
     <ul>
@@ -193,10 +196,13 @@ end</code></pre>
 
     <p>If you need math, you have both inline (<span>$A x^2 + B x + C = 0$</span>) and display equations available to you:</p>
     <div class="equation-display">\[x_{1,2} = \frac{-B \pm \sqrt{B^2 - 4 A C}}{2A}\]</div>
-    <p>Finally, admonitions for notes, warnings and such:</p>
-    <div class="admonition warning">
-      <div class="admonition-title">Admonition: class <code>warning</code></div>
-      <div class="admonition-text">
+    <p>Finally, admonitions for notes, warnings and such (implemented as a Bulma <code>message</code>):</p>
+
+    <div class="message is-danger admonition">
+      <header class="message-header">
+        <p>Admonition: class <code>warning</code></p>
+      </header>
+      <div class="message-body">
         <p>Nullam a magna porttitor, consequat justo eget, placerat purus. Sed in leo ligula. Phasellus mollis neque vel erat laoreet aliquam. Donec elementum tortor ut nunc posuere, id molestie mauris hendrerit.</p>
         <pre><code class="language-none">foo bar baz</code></pre>
         <p>Nulla eu turpis eget diam ultricies feugiat.</p>
@@ -207,9 +213,11 @@ end</code></pre>
       </div>
     </div>
 
-    <div class="admonition note">
-      <div class="admonition-title">Admonition: class <code>note</code></div>
-      <div class="admonition-text">
+    <div class="message admonition note is-info">
+      <header class="message-header">
+        <p>Admonition: class <code>note</code></p>
+      </header>
+      <div class="message-body">
         <p>Headings are reasonably scaled in admonitions:</p>
         <h1>Heading 1</h1>
         <p>Nullam a magna porttitor, consequat justo eget, placerat purus.</p>
@@ -226,16 +234,20 @@ end</code></pre>
       </div>
     </div>
 
-    <div class="admonition tip">
-      <div class="admonition-title">Admonition: class <code>tip</code></div>
-      <div class="admonition-text">
+    <div class="message is-success admonition tip">
+      <header class="message-header admonition-title">
+        <p>Admonition: class <code>tip</code></p>
+      </header>
+      <div class="message-body">
         <p>Nullam a magna porttitor, consequat justo eget, placerat purus.</p>
       </div>
     </div>
 
-    <div class="admonition">
-      <div class="admonition-title">Default admonition</div>
-      <div class="admonition-text">
+    <div class="message admonition">
+      <header class="message-header">
+        <p>Default admonition</p>
+      </header>
+      <div class="message-body">
         <p>Nullam a magna porttitor, consequat justo eget, placerat purus.</p>
       </div>
     </div>
@@ -432,18 +444,40 @@ julia> workers()
     </tbody>
   </table>
 
+  <h2>Images and videos</h2>
+
+  <p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Black_hole_-_Messier_87.jpg/320px-Black_hole_-_Messier_87.jpg" title="Small black hole" alt="Image: Small black hole">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Black_hole_-_Messier_87.jpg/320px-Black_hole_-_Messier_87.jpg" title="Small black hole" alt="Image: Small black hole">
+  </p>
+
+  <p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Black_hole_-_Messier_87.jpg/320px-Black_hole_-_Messier_87.jpg" title="Small black hole" alt="Image: Small black hole">
+  </p>
+
+  <p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Black_hole_-_Messier_87.jpg/1280px-Black_hole_-_Messier_87.jpg" title="Big black hole" alt="Image: Big black hole">
+  </p>
+
+  <p>Large video:</p>
+  <video controls>
+    <source src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Wikit%C3%A1bor_v_techm%C3%A1nii.webm" type="video/webm">
+  </video>
+
+  <p>Small video:</p>
+  <video controls src="https://upload.wikimedia.org/wikipedia/commons/0/00/Solstice_Timelapse_-_Day_and_Night_in_the_Midnight_Sun.webm"></video>
+
+  <p>No video video:</p>
+  <video controls src="index.html" type="video/foobar">AAA</video>
+
   <p>As the last thing on the page we'll collect all the footnote definitions, if there are any.</p>
-  <ul class="footnotes">
-    <li id="footnote-Clarke61" class="footnote-inline">
-      <div class="footnote-anchor">
-        <a href="#footnote-Clarke61">[Clarke61]</a>:
-      </div>
+  <ul class="footnotes is-size-7">
+    <li id="footnote-Clarke61" class="footnote">
+      <a class="tag is-link" href="#footnote-Clarke61">Clarke61</a>:
       Arthur C. Clarke, <em>Profiles of the Future</em> (1961): Clarke's Third Law.
     </li>
     <li class="footnote">
-      <div class="footnote-anchor">
-        <a href="#footnote-Clarke61">[2]</a>
-      </div>
+      <a class="tag is-link is-block" href="#footnote-Clarke61">2</a>
       <p>
         Footnotes can also consist of multiple block notes and are then rendered like this.
         They can also contain other block level elements, like headings:
