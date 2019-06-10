@@ -35,23 +35,23 @@
   <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
 </head>
 <body class="columns">
-  <nav class="column is-narrow" id="sidebar" style="width: 16rem;">
+  <nav class="column is-narrow" id="sidebar" style="width: 18rem;">
     <header class="has-text-centered">
       <a href="#">
-        <img class="image" src="logo.svg" title="Documenter.jl" alt="Documenter.jl logo">
+        <img class="image" src="logo.svg" title="Documenter.jl" alt="Documenter.jl logo" style="margin: auto;">
       </a>
       <!-- <h1 id="pagetitle">Documenter mockup with Bootstrap</h1> -->
-      <h1 class="title" id="pagetitle">
+      <p class="title is-size-4" id="pagetitle">
         <!-- <span id="pagetitle-overflow-box"> -->
           Really-really long package name (like, very long)
         <!-- </span> -->
-      </h1>
+      </p>
     </header>
 
-    <select id="version-selector" onchange="window.location.href=this.value" style="display: none;"></select>
+    <!-- <select id="version-selector" onchange="window.location.href=this.value" style="display: none;"></select> -->
 
     <form class="search" id="search-form" action="#" name="search-form">
-      <input id="search-query" name="q" type="text" placeholder="Search the docs" />
+      <input id="search-query" name="q" type="text" placeholder="Search the docs" style="margin: auto;" />
     </form>
 
     <!-- <aside class="menu"> -->
@@ -471,37 +471,39 @@ julia> workers()
   <video controls src="index.html" type="video/foobar">AAA</video>
 
   <p>As the last thing on the page we'll collect all the footnote definitions, if there are any.</p>
-  <ul class="footnotes is-size-7">
-    <li id="footnote-Clarke61" class="footnote">
-      <a class="tag is-link" href="#footnote-Clarke61">Clarke61</a>:
-      Arthur C. Clarke, <em>Profiles of the Future</em> (1961): Clarke's Third Law.
-    </li>
-    <li class="footnote">
-      <a class="tag is-link is-block" href="#footnote-Clarke61">2</a>
-      <p>
-        Footnotes can also consist of multiple block notes and are then rendered like this.
-        They can also contain other block level elements, like headings:
-      </p>
-      <h1>Headings in a footnote</h1>
-      <p>Arthur C. Clarke, <em>Profiles of the Future</em> (1961): Clarke's Third Law.</p>
-    </li>
-  </ul>
+  <section class="footnotes is-size-7"  style="border-top: 1px solid lightgrey;">
+    <ul>
+      <li id="footnote-Clarke61" class="footnote">
+        <a class="tag" href="#footnote-Clarke61">Clarke61</a>:
+        Arthur C. Clarke, <em>Profiles of the Future</em> (1961): Clarke's Third Law.
+      </li>
+      <li class="footnote">
+        <a class="tag is-block" href="#footnote-Clarke61">2</a>
+        <p>
+          Footnotes can also consist of multiple block notes and are then rendered like this.
+          They can also contain other block level elements, like headings:
+        </p>
+        <h1>Headings in a footnote</h1>
+        <p>Arthur C. Clarke, <em>Profiles of the Future</em> (1961): Clarke's Third Law.</p>
+      </li>
+    </ul>
+  </section>
 
 </article>
 
 <footer>
-  <nav class="d-flex flex-wrap">
-    <a class="text-left" title="Previous" href="#">
+  <nav class="columns">
+    <a class="column has-text-left" title="Previous" href="#">
       &laquo;
       Variables
     </a>
-    <a class="ml-auto text-right" title="Next" href="#">
+    <a class="column has-text-right" title="Next" href="#">
       Mathematical Operations and Elementary Functions
       &raquo;
     </a>
   </nav>
 
-  <div class="colophon">
+  <div id="colophon" class="footer is-size-7 has-text-centered">
     <p>
       Created with
       <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a>
