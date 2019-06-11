@@ -20,7 +20,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.2/katex.min.css" rel="stylesheet" type="text/css">
   <link id="themecss" href="documenter.css" rel="stylesheet" type="text/css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"> -->
   <!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
 
   <!-- Fonts -->
@@ -34,8 +34,8 @@
   <!-- <link href="assets/documenter.css" rel="stylesheet" type="text/css"> -->
   <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
 </head>
-<body class="columns">
-  <nav class="column is-narrow" id="sidebar" style="width: 18rem;">
+<body class="dashboard">
+  <nav id="sidebar">
     <header class="has-text-centered">
       <a href="#">
         <img class="image" src="logo.svg" title="Documenter.jl" alt="Documenter.jl logo" style="margin: auto;">
@@ -54,45 +54,42 @@
       <input id="search-query" name="q" type="text" placeholder="Search the docs" style="margin: auto;" />
     </form>
 
-    <!-- <aside class="menu"> -->
-      <p class="menu-label">Table of contents</p>
-      <ul class="menu-list">
-        <li><a href="#">Home</a></li>
-        <li>
-          <a class="inactive">Manual</a>
-          <ul>
-            <li>
-            <li><a class="toctext" href="man/examples/">Examples</a></li>
-              <a class="is-active" href="man/guide/">Guide</a>
-              <ul class="internal">
-                <li><a class="toctext" href="#Package-Features-1">Package Features</a></li>
-                <li><a class="toctext" href="#Manual-Outline-1">Manual Outline</a></li>
-                <li><a class="toctext" href="#Library-Outline-1">Library Outline</a></li>
-              </ul>
-            </li>
-            <li><a class="toctext" href="man/syntax/">Syntax</a></li>
-            <li><a class="toctext" href="man/doctests/">Doctests</a></li>
-            <li><a class="toctext" href="man/latex/"><span>$\LaTeX$</span> Syntax</a></li>
-            <li><a class="toctext" href="man/hosting/">Hosting Documentation</a></li>
-            <li><a class="toctext" href="man/other-formats/">Other Output Formats</a></li>
-          </ul>
-        </li>
-        <li>
-          <a>Library</a>
-          <ul>
-            <li><a class="toctext" href="lib/public/">Public</a></li>
-            <li><a class="toctext" href="lib/internals/">Internals</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Contributing</a></li>
-      </ul>
-    <!-- </aside> -->
+    <ul id="sidebar-menu" class="menu-list  is-scrollable">
+      <li><a href="#">Home</a></li>
+      <li>
+        <a class="inactive">Manual</a>
+        <ul>
+          <li>
+          <li><a class="toctext" href="man/examples/">Examples</a></li>
+            <a class="is-active" href="man/guide/">Guide</a>
+            <ul class="internal">
+              <li><a class="toctext" href="#Package-Features-1">Package Features</a></li>
+              <li><a class="toctext" href="#Manual-Outline-1">Manual Outline</a></li>
+              <li><a class="toctext" href="#Library-Outline-1">Library Outline</a></li>
+            </ul>
+          </li>
+          <li><a class="toctext" href="man/syntax/">Syntax</a></li>
+          <li><a class="toctext" href="man/doctests/">Doctests</a></li>
+          <li><a class="toctext" href="man/latex/"><span>$\LaTeX$</span> Syntax</a></li>
+          <li><a class="toctext" href="man/hosting/">Hosting Documentation</a></li>
+          <li><a class="toctext" href="man/other-formats/">Other Output Formats</a></li>
+        </ul>
+      </li>
+      <li>
+        <a>Library</a>
+        <ul>
+          <li><a class="toctext" href="lib/public/">Public</a></li>
+          <li><a class="toctext" href="lib/internals/">Internals</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Contributing</a></li>
+    </ul>
   </nav>
 
   <!--------------------------------------------------------------------------------------->
-  <div class="column" id="body">
-    <header class="columns" id="pageheader">
-      <nav class="breadcrumb column">
+  <div id="main" class="dashboard-main is-scrollable">
+    <header id="pageheader" class="navbar-brand">
+      <nav class="navbar-start breadcrumb">
         <ul>
           <li><a href="">Home</a></li>
           <li><a href="">This page</a></li>
@@ -101,11 +98,36 @@
           <li><a href="">Breadcrumb</a></li>
         </ul>
       </nav>
-      <a class="column is-2 edit-page" href="#" style="width: 10rem;">
+      <a class="navbar-item edit-page" href="#">
         <span class="fab"></span>
-        <span class="is-hidden-mobile">Edit on GitHub</span>
+        <span class="is-hidden-mobile edit-page-text">Edit on GitHub</span>
       </a>
-      <!-- <a id="menu-button" class="fa fa-bars" href="#"></a> -->
+      <!-- <a id="menu-button" class="fa fa-bars is-tablet-hidden" href="#"></a> -->
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </header>
+
+    <header id="pageheader" class="navbar-brand">
+      <ul class="navbar-menu">
+        <li class="navbar-item"><a href="">Home</a></li>
+        <li class="navbar-item"><a href="">This page</a></li>
+        <li class="navbar-item"><a href="">Has a</a></li>
+        <li class="navbar-item"><a href="">Rather long</a></li>
+        <li class="navbar-item"><a href="">Breadcrumb</a></li>
+      </ul>
+      <a class="navbar-item edit-page" href="#">
+        <span class="fab"></span>
+        <span class="is-hidden-mobile edit-page-text">Edit on GitHub</span>
+      </a>
+      <!-- <a id="menu-button" class="fa fa-bars is-tablet-hidden" href="#"></a> -->
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </header>
 
     <article class="content" id="document">
@@ -518,7 +540,6 @@ julia> workers()
     </p>
   </div>
 </footer>
-
 </div>
 </body>
 </html>

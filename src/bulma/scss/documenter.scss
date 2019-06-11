@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+$documenter-max-width: 50rem;
+
+$footer-padding: 1.5rem;
+
+@import "sass/utilities/_all";
+@import "sass/base/_all";
+
+// While the docs claim that the navbar breakpoint is `mobile`, it actually is `desktop`.
+// Hence the need to override this variable.
+$navbar-breakpoint: $tablet !default;
+
+@import "sass/elements/_all";
+@import "sass/form/_all";
+@import "sass/components/_all";
+@import "sass/grid/_all";
+@import "sass/layout/_all";
+@import "sass/bulma-dashboard";
+
+.edit-page-text {
+  padding-left: 0.5rem;
+}
+
+* {
+  transition: all 0.3s;
+}
+
+#sidebar {
+  @extend .dashboard-panel;
+  // @extend .is-medium;
+  // @extend .is-hidden-mobile;
+  box-shadow: 0.2rem 0rem 0.4rem #bbb;
+  background-color: hsla(47, 100%, 90%, 1);
+  padding: 0;
+  left: 0;
+
+  width: 20rem; // FIXME
+  flex: 0 0 20rem;
+
+  @include mobile {
+    position: absolute;
+    left: -20rem;
+    box-shadow: none;
+
+    &.visible {
+      left: 0;
+    }
+  }
+  z-index: 5;
+}
+
+#sidebar-menu {
+  @extend .is-scrollable;
+
+  /* Setting up a nicer theme style for the scrollbar */
+  overflow-y: auto;
+  -webkit-overflow-scroll: touch;
+  &::-webkit-scrollbar {
+      width: .3rem;
+      background: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+      border-radius: 5px 0px 0px 5px;
+      background: hsla(48, 56%, 76%, 1);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+      background: hsla(48, 96%, 55%, 1);
+  }
+}
+
+#main {
+  padding: 1rem;
+  @include tablet {
+    padding-left: 1.3rem;
+  }
+  // We need to
+  > * {
+    max-width: $documenter-max-width;
+  }
+}
+
+#pageheader {
+  background-color: #999;
+}
+
+
+// Bulma always adds a vertical scrollbar to the whole page. But since we're using the
+// dashboard with the panes being scrollable individually, we need to explicitly remove the
+// scrollbars from the html element.
+html {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
