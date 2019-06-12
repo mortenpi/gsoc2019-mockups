@@ -31,8 +31,10 @@ h1, h2, h3, h4, h5, h6 {
   > header {
     @extend .card-header;
 
+    background-color: $background;
+
     // Same as .card-header-title, sans font-weight:
-    align-items: center;
+    // align-items: center;
     color: $card-header-color;
     display: flex;
     flex-grow: 1;
@@ -49,16 +51,16 @@ h1, h2, h3, h4, h5, h6 {
 
     // TODO: FIX!
     footer {
-      // margin-top: 0.5rem;
+      margin-top: 0.5rem;
       text-align: right;
       // float: right;
-      position: absolute;
-      right: 0.7*$card-content-padding;
-      top: 0.7*$card-content-padding;
-      visibility: hidden;
+      // position: relative;
+      // right: 0.7*$card-content-padding;
+      // top: 0.7*$card-content-padding;
+      // visibility: hidden;
       > a {
         @extend .tag;
-        @extend .is-info;
+        @extend .is-light;
         @extend .is-size-7;
       }
     }
