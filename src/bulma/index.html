@@ -34,24 +34,36 @@
   <!-- <link href="assets/documenter.css" rel="stylesheet" type="text/css"> -->
   <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
 </head>
-<body class="dashboard">
+<body><div class="dashboard">
   <nav id="sidebar">
     <header class="has-text-centered">
       <a href="#">
         <img class="image" src="logo.svg" title="Documenter.jl" alt="Documenter.jl logo" style="margin: auto;">
       </a>
       <!-- <h1 id="pagetitle">Documenter mockup with Bootstrap</h1> -->
-      <p class="title is-size-4" id="pagetitle">
-        <!-- <span id="pagetitle-overflow-box"> -->
+      <p id="pagetitle">
+        <span id="pagetitle-overflow-box">
           Really-really long package name (like, very long)
-        <!-- </span> -->
+        </span>
       </p>
+
+      <div id="version-selector">
+        <select>
+          <option value="#" selected="selected">v1.1.1</option>
+          <option value="./../v1.1">v1.1</option>
+          <option value="./../v1.0">v1.0</option>
+          <option value="./../v0.7">v0.7</option>
+          <option value="./../v0.6">v0.6</option>
+          <option value="./../v0.5">v0.5</option>
+          <option value="./../v0.4">v0.4</option>
+          <option value="./../v0.3">v0.3</option>
+          <option value="./../v1.3-dev">v1.3-dev</option>
+        </select>
+      </div>
     </header>
 
-    <!-- <select id="version-selector" onchange="window.location.href=this.value" style="display: none;"></select> -->
-
-    <form class="search" id="search-form" action="#" name="search-form">
-      <input id="search-query" name="q" type="text" placeholder="Search the docs" style="margin: auto;" />
+    <form id="search-form" action="#" name="search-form">
+      <input id="search-query" name="q" type="text" placeholder="Search the docs" />
     </form>
 
     <ul id="sidebar-menu" class="menu-list  is-scrollable">
@@ -88,46 +100,27 @@
 
   <!--------------------------------------------------------------------------------------->
   <div id="main" class="dashboard-main is-scrollable">
-    <header id="pageheader" class="navbar-brand">
-      <nav class="navbar-start breadcrumb">
-        <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">This page</a></li>
-          <li><a href="">Has a</a></li>
-          <li><a href="">Rather long</a></li>
-          <li><a href="">Breadcrumb</a></li>
+    <!-- <div class="ui-mask"></div> -->
+    <header id="navbar">
+      <nav class="breadcrumb">
+        <ul class="is-hidden-mobile">
+          <li class=""><a href="">Home</a></li>
+          <li class=""><a href="">This page</a></li>
+          <li class=""><a href="">Has a</a></li>
+          <li class=""><a href="">Rather long</a></li>
+          <li class="is-active"><a href="">Breadcrumb</a></li>
+        </ul>
+        <ul class="is-hidden-tablet">
+          <li class="is-active"><a href="">Breadcrumb</a></li>
         </ul>
       </nav>
-      <a class="navbar-item edit-page" href="#">
-        <span class="fab"></span>
-        <span class="is-hidden-mobile edit-page-text">Edit on GitHub</span>
-      </a>
-      <!-- <a id="menu-button" class="fa fa-bars is-tablet-hidden" href="#"></a> -->
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </header>
-
-    <header id="pageheader" class="navbar-brand">
-      <ul class="navbar-menu">
-        <li class="navbar-item"><a href="">Home</a></li>
-        <li class="navbar-item"><a href="">This page</a></li>
-        <li class="navbar-item"><a href="">Has a</a></li>
-        <li class="navbar-item"><a href="">Rather long</a></li>
-        <li class="navbar-item"><a href="">Breadcrumb</a></li>
-      </ul>
-      <a class="navbar-item edit-page" href="#">
-        <span class="fab"></span>
-        <span class="is-hidden-mobile edit-page-text">Edit on GitHub</span>
-      </a>
-      <!-- <a id="menu-button" class="fa fa-bars is-tablet-hidden" href="#"></a> -->
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+      <div class="right">
+        <a class="edit-page" href="#" title="Edit on GitHub">
+          <span class="fab"></span>
+          <span class="edit-page-text is-hidden-mobile">Edit on GitHub</span>
+        </a>
+        <a id="sidebar-button" class="fa fa-bars sidebar-button" href="#"></a>
+      </div>
     </header>
 
     <article class="content" id="document">
@@ -541,5 +534,6 @@ julia> workers()
   </div>
 </footer>
 </div>
-</body>
+
+</div></body>
 </html>

@@ -32,10 +32,9 @@ const SASSBUILDER_LOADPATH = Ref(joinpath(@__DIR__, "scss"))
 const SASSBUILDER_FILES = Ref(String[])
 push!(SASSBUILDER_FILES[], joinpath(@__DIR__, "scss", "bulma.sass"))
 push!(SASSBUILDER_FILES[], joinpath(@__DIR__, "scss", "documenter.scss"))
-# joinpath(@__DIR__, "scss", "documenter-dark.scss"),
-# joinpath(@__DIR__, "scss", "documenter-rainbow.scss"),
-# joinpath(@__DIR__, "scss", "darkly.scss"),
-const SASSBUILDER_WATCHING = Ref(all_subdirectories(joinpath(@__DIR__, "scss")))
+push!(SASSBUILDER_FILES[], joinpath(@__DIR__, "scss", "darkly.scss"))
+const SASSBUILDER_WATCHING = Ref(String[])
+append!(SASSBUILDER_WATCHING[], all_subdirectories(joinpath(@__DIR__, "scss")))
 const SASSBUILDER_DEBUG = Ref(false)
 
 
