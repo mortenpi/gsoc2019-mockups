@@ -1,3 +1,15 @@
+//
+.content {
+  .card:not(:last-child) {
+    margin-bottom: 1em;
+  }
+
+  kbd {
+    @extend .tag;
+    @extend .is-dark;
+  }
+}
+
 /* Font Awesome 5 mixin. Can be included in any rule that should render Font Awesome icons. */
 @mixin font-awesome {
   font-family: "Font Awesome 5 Free";
@@ -138,7 +150,7 @@ h1, h2, h3, h4, h5, h6 {
     transition-duration: 0.3s;
     -webkit-transition-duration: 0.3s; /* Safari */
     &.headroom--not-top {
-      box-shadow: 0.2rem 0rem 0.4rem #bbb;
+      box-shadow: $shadow-size 0rem $shadow-blur $shadow;
       transition-duration: 0.7s;
       -webkit-transition-duration: 0.7s; /* Safari */
     }
@@ -152,9 +164,10 @@ h1, h2, h3, h4, h5, h6 {
 
 #sidebar {
   @extend .dashboard-panel;
-  // @extend .is-medium;
-  // @extend .is-hidden-mobile;
-  background-color: $background;
+
+  color: $sidebar-color;
+  background-color: $sidebar-background;
+  border-right: 1px solid $border;
   padding: 0;
 
   position: absolute;
@@ -167,11 +180,13 @@ h1, h2, h3, h4, h5, h6 {
 
   &.visible {
     left: 0;
-    box-shadow: 0.2rem 0rem 0.4rem $border;
+    box-shadow: 2*$shadow-size 0rem 2*$shadow-blur $shadow;
+    @include tablet {
+      box-shadow: none;
+    }
   }
   @include tablet {
     left: 0;
-    box-shadow: 0.2rem 0rem 0.4rem $border;
     position: relative;
   }
 
@@ -196,6 +211,54 @@ h1, h2, h3, h4, h5, h6 {
   #sidebar-menu {
     @extend .is-scrollable;
 
+    font-size: $size-normal;
+
+    > li > .tocitem {
+      padding-left: $sidebar-menu-padding;
+    }
+    ul > li > .tocitem {
+      padding-left: 2*$sidebar-menu-padding;
+    }
+    ul ul > li > .tocitem {
+      padding-left: 3*$sidebar-menu-padding;
+    }
+    ul ul ul li > .tocitem {
+      padding-left: 4*$sidebar-menu-padding;
+    }
+
+    .tocitem {
+      display: block;
+      padding-top: 0.4em;
+      padding-bottom: 0.4em;
+
+      &, &:hover {
+        color: $sidebar-color;
+      }
+    }
+
+    a.tocitem:hover {
+      background-color: $sidebar-menu-hover-background;
+      // color: $sidebar-menu-hover-color;
+    }
+
+    .tocitem.is-active {
+      border-top: 1px solid $sidebar-menu-border;
+      &, &:hover {
+        background-color: $sidebar-menu-active-background;
+        color: $sidebar-menu-active-color;
+        font-weight: $sidebar-menu-active-font-weight;
+      }
+    }
+
+    ul.internal {
+      background-color: $sidebar-menu-internal-background;
+      border-top: 1px solid $sidebar-menu-internal-border;
+      border-bottom: 1px solid $sidebar-menu-internal-border;
+      & .tocitem:hover {
+        background-color: $sidebar-menu-internal-hover-background;
+      }
+    }
+
     /* Setting up a nicer theme style for the scrollbar */
     overflow-y: auto;
     -webkit-overflow-scroll: touch;
@@ -206,11 +269,11 @@ h1, h2, h3, h4, h5, h6 {
 
     &::-webkit-scrollbar-thumb {
         border-radius: 5px 0px 0px 5px;
-        background: hsla(48, 56%, 76%, 1);
+        background: $sidebar-scrollbar-color;
     }
 
     &::-webkit-scrollbar-thumb:hover {
-        background: hsla(48, 96%, 55%, 1);
+        background: $sidebar-scrollbar-color-hover;
     }
   }
 

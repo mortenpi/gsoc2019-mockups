@@ -1,3 +1,25 @@
 // While the docs claim that the navbar breakpoint is `mobile`, it actually is `desktop`.
 // Hence the need to override this variable.
 // $navbar-breakpoint: $tablet !default;
+
+$sidebar-background: $primary !default;
+$sidebar-color: invert($sidebar-background) !default;
+
+// $sidebar-scrollbar-color: adjust-color($background, $lightness: -10%);
+// $sidebar-scrollbar-color-hover: adjust-color($background, $lightness: -20%);
+$sidebar-scrollbar-color: darken-color($sidebar-background, 1) !default;
+$sidebar-scrollbar-color-hover: darken-color($sidebar-background, 2) !default;
+
+$sidebar-menu-border: darken-color($border, 1) !default;
+
+// $sidebar-menu-hover-color: $text-strong !default;
+$sidebar-menu-hover-background: darken-color($sidebar-background, 0.5) !default;
+
+// $sidebar-menu-active-background: $primary !default;
+$sidebar-menu-active-background: darken-color($sidebar-background, 0.5) !default;
+$sidebar-menu-active-color: $sidebar-color !default;
+$sidebar-menu-active-font-weight: $weight-bold !default;
+
+$sidebar-menu-internal-background: darken-color($sidebar-background, 1) !default;
+$sidebar-menu-internal-hover-background: darken-color($sidebar-background, 1.5) !default;
+$sidebar-menu-internal-border: darken-color($border, 1) !default;
