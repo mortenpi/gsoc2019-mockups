@@ -12,16 +12,17 @@ $amber-300: #FFD54F;
 $amber-500: #FFC107;
 
 // $primary: #FFC34C !default;
-$primary: $amber-500 !default;
-$primary-100: $amber-100 !default;
-$primary-invert: invert($primary) !default;
+// $primary: $amber-500 !default;
+// $primary-100: $amber-100 !default;
+// $primary-invert: invert($primary) !default;
+// $primary: $blue-100 !default;
 
 $shadow: #bbb !default;
 $shadow-size: 0.2rem !default;
 $shadow-blur: 0.4rem !default;
 
-$sidebar-background: $primary-100 !default;
-$sidebar-menu-active-background: $primary !default;
+// $sidebar-background: $primary-100 !default;
+// $sidebar-menu-active-background: $primary !default;
 
 $documenter-max-width: 50rem !default;
 $footer-padding: 1.5rem !default;

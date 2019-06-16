@@ -2,7 +2,8 @@
 // Hence the need to override this variable.
 // $navbar-breakpoint: $tablet !default;
 
-$sidebar-background: $primary !default;
+// $sidebar-background: $primary !default;
+$sidebar-background: $background !default;
 $sidebar-color: invert($sidebar-background) !default;
 
 // $sidebar-scrollbar-color: adjust-color($background, $lightness: -10%);
@@ -16,7 +17,9 @@ $sidebar-menu-border: darken-color($border, 1) !default;
 $sidebar-menu-hover-background: darken-color($sidebar-background, 0.5) !default;
 
 // $sidebar-menu-active-background: $primary !default;
-$sidebar-menu-active-background: darken-color($sidebar-background, 0.5) !default;
+// $sidebar-menu-active-background: $white !default;
+// $sidebar-menu-active-background: darken-color($sidebar-background, 0.5) !default;
+$sidebar-menu-active-background: lighten-color($sidebar-background, 0.5) !default;
 $sidebar-menu-active-color: $sidebar-color !default;
 $sidebar-menu-active-font-weight: $weight-bold !default;
 

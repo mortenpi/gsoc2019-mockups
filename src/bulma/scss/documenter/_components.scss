@@ -43,15 +43,15 @@ h1, h2, h3, h4, h5, h6 {
   > header {
     @extend .card-header;
 
-    background-color: $background;
+    // background-color: $background;
 
     // Same as .card-header-title, sans font-weight:
     // align-items: center;
     color: $card-header-color;
     display: flex;
     flex-grow: 1;
-    // padding: $card-header-padding;
-    padding: $card-header-padding $card-content-padding;
+    padding: $card-header-padding;
+    // padding: $card-header-padding $card-content-padding;
   }
 
   > section {

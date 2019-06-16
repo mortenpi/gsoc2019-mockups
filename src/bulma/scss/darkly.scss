@@ -10,6 +10,8 @@ $shadow: $grey-darker;
 $sidebar-color: $text;
 $lightness-unit: -8%;
 
+$docstring-pre-background: adjust-color($background, $lightness: 5);
+
 @import "documenter/variables";
 
 @import "bulma/utilities/_all";
@@ -27,11 +29,10 @@ $lightness-unit: -8%;
 @import "darkly/overrides";
 
 @import "documenter/components";
+@import "documenter/patches";
 
-.message-body {
-  h1, h2, h3, h4, h5, h6 {
-    // color: blue;
+.docstring > section {
+  pre {
+    background-color: $docstring-pre-background;
   }
-  border-width: $border-width;
-  border-color: $grey-dark;
 }
