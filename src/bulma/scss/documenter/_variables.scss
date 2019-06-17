@@ -21,16 +21,6 @@ $shadow: #bbb !default;
 $shadow-size: 0.2rem !default;
 $shadow-blur: 0.4rem !default;
 
-// $sidebar-background: $primary-100 !default;
-// $sidebar-menu-active-background: $primary !default;
-
-$documenter-max-width: 50rem !default;
-$footer-padding: 1.5rem !default;
-
-$sidebar-width: 20rem !default;
-$sidebar-title-width: 0.9 * $sidebar-width !default;
-$sidebar-menu-padding: 1rem !default;
-
 $lightness-unit: 8% !default;
 @function darken-color($color, $factor) {
   @return adjust-color($color, $lightness: -$factor*$lightness-unit);

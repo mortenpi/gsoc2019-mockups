@@ -2,6 +2,16 @@
 // Hence the need to override this variable.
 // $navbar-breakpoint: $tablet !default;
 
+// $sidebar-background: $primary-100 !default;
+// $sidebar-menu-active-background: $primary !default;
+
+$documenter-max-width: 50rem !default;
+$footer-padding: 1.5rem !default;
+
+$sidebar-width: 18rem !default;
+$sidebar-title-width: 0.9 * $sidebar-width !default;
+$sidebar-menu-padding: 1rem !default;
+
 // $sidebar-background: $primary !default;
 $sidebar-background: $background !default;
 $sidebar-color: invert($sidebar-background) !default;

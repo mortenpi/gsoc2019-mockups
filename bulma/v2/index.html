@@ -512,6 +512,29 @@ julia> workers()
   <p>No video video:</p>
   <video controls src="index.html" type="video/foobar">AAA</video>
 
+  <h2 id="link-non-js-toggle">
+    Non-JS toggle
+    <a class="heading-anchor" href="#link-non-js-toggle" title="Permalink"></a>
+  </h2>
+  <style>
+  #toggle:checked ~ #hidethis {
+    display: none;
+  }
+  #hidethis {
+    border: 1px dashed black;
+    height: 100px;
+  }
+  </style>
+  <label for="toggle"><p>The div can also be toggled by clicking on this text.</p></label>
+  <input id="toggle" type="checkbox" />
+  <div id="hidethis">Just a <code>div</code></div>
+
+
+  <h2 id="link-footnotes">
+    Footnotes
+    <a class="heading-anchor" href="#link-footnotes" title="Permalink"></a>
+  </h2>
+
   <p>As the last thing on the page we'll collect all the footnote definitions, if there are any.</p>
   <section class="footnotes is-size-7"  style="border-top: 1px solid lightgrey;">
     <ul>

@@ -7283,9 +7283,9 @@ h1:hover .heading-anchor, h2:hover .heading-anchor, h3:hover .heading-anchor, h4
   border-right: 1px solid #dbdbdb;
   padding: 0;
   position: absolute;
-  left: -20rem;
-  width: 20rem;
-  flex: 0 0 20rem;
+  left: -18rem;
+  width: 18rem;
+  flex: 0 0 18rem;
   z-index: 5;
   transition: left 0.3s; }
   #sidebar.visible {
@@ -7308,7 +7308,7 @@ h1:hover .heading-anchor, h2:hover .heading-anchor, h3:hover .heading-anchor, h4
      */
     padding: 0.5rem 0; }
     #sidebar #pagetitle #pagetitle-overflow-box {
-      max-width: 18rem;
+      max-width: 16.2rem;
       transition: all 0.3s; }
   #sidebar #sidebar-menu {
     font-size: 1rem;
@@ -7352,7 +7352,7 @@ h1:hover .heading-anchor, h2:hover .heading-anchor, h3:hover .heading-anchor, h4
     #sidebar #sidebar-menu::-webkit-scrollbar-thumb:hover {
       background: #cccccc; }
   #sidebar #version-selector > select {
-    width: 8rem;
+    width: 7.2rem;
     text-align: center;
     text-align-last: center; }
   #sidebar #search-form {
@@ -7360,7 +7360,7 @@ h1:hover .heading-anchor, h2:hover .heading-anchor, h3:hover .heading-anchor, h4
     margin-top: 0.5rem;
     margin-bottom: 0.5rem; }
     #sidebar #search-form > input {
-      width: 16rem; }
+      width: 14.4rem; }
 
 html {
   overflow-x: hidden;
