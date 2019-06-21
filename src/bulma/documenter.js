@@ -54,15 +54,16 @@ requirejs(['jquery'], function($) {
   // Resizes the package name / sitename in the sidebar if it is too wide.
   // Inspired by: https://github.com/davatron5000/FitText.js
   $(document).ready(function() {
+    e = $("#documenter .docs-autofit");
     // console.log($("#pagetitle-overflow-box"));
     // console.log($("#pagetitle-overflow-box").width());
     // window.fitText($("#pagetitle-overflow-box"));
     function resize() {
-      var L = parseInt($("#pagetitle-overflow-box").css('max-width'), 10);
-      var L0 = $("#pagetitle-overflow-box").width();
+      var L = parseInt(e.css('max-width'), 10);
+      var L0 = e.width();
       if(L0 > L) {
-        var h0 = parseInt($("#pagetitle-overflow-box").css('font-size'), 10);
-        $("#pagetitle-overflow-box").css('font-size', L * h0 / L0);
+        var h0 = parseInt(e.css('font-size'), 10);
+        e.css('font-size', L * h0 / L0);
         // TODO: make sure it survives resizes?
       }
     }
@@ -78,7 +79,7 @@ requirejs(['jquery'], function($) {
 require(['jquery'], function($) {
     $(document).ready(function() {
         // TODO: this needs to be reviewed
-        var sidebar = $("#sidebar");
+        var sidebar = $("#documenter > .docs-sidebar");
         // var uimask = $("#main > .ui-mask");
         // $("nav.toc li.current a.toctext").click(function() {
         //     sidebar.toggleClass('show');
@@ -109,9 +110,9 @@ require(['jquery'], function($) {
 require(['jquery', 'headroom', 'headroom-jquery'], function($, Headroom) {
     window.Headroom = Headroom; // work around buggy module loading?
     $(document).ready(function() {
-        $('#navbar').headroom({
+        $('#documenter .docs-navbar').headroom({
           "tolerance": {"up": 10, "down": 10},
-          scroller: $("#main").get(0),
+          scroller: $("#documenter .docs-main").get(0),
         });
     })
 })

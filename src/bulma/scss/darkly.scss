@@ -12,6 +12,7 @@ $lightness-unit: -8%;
 
 $docstring-pre-background: adjust-color($background, $lightness: 5);
 
+@import "documenter/utilities";
 @import "documenter/variables";
 
 @import "bulma/utilities/_all";
@@ -30,6 +31,7 @@ $docstring-pre-background: adjust-color($background, $lightness: 5);
 
 @import "documenter/components";
 @import "documenter/patches";
+@import "documenter/layout";
 
 .docstring > section {
   pre {

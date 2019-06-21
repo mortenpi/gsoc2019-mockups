@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+@import "documenter/utilities";
 @import "documenter/variables";
 
 @import "bulma/utilities/_all";
@@ -16,3 +17,4 @@
 
 @import "documenter/components";
 @import "documenter/patches";
+@import "documenter/layout";

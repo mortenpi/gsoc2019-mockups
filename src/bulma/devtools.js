@@ -37,6 +37,7 @@ define(["jquery"], function($) {
       }
       .uicomponents {
         display: flex;
+        flex-direction: column;
       }
       .hidden {
         display: none;
@@ -63,6 +64,7 @@ define(["jquery"], function($) {
           <div class="uicomponents">
             <button type="button" id="dev-btn-hidelogo">Toggle logo</button>
             <button type="button" id="dev-btn-hidetitle">Toggle sidebar title</button>
+            <button type="button" id="dev-btn-showversion">Toggle version selector</button>
           </div>
         </article>
       `);
@@ -107,10 +109,13 @@ define(["jquery"], function($) {
       }
 
       this._shadow.getElementById('dev-btn-hidelogo').addEventListener('click', function(ev) {
-        $('#logo').toggle();
+        $('#documenter > .docs-sidebar > .docs-logo').toggle();
       }, false);
       this._shadow.getElementById('dev-btn-hidetitle').addEventListener('click', function(ev) {
-        $('#pagetitle').toggle();
+        $('#documenter > .docs-sidebar > .docs-package-name').toggle();
+      }, false);
+      this._shadow.getElementById('dev-btn-showversion').addEventListener('click', function(ev) {
+        $('#documenter .docs-version-selector').toggleClass("visible");
       }, false);
     }
   }

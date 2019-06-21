@@ -34,39 +34,22 @@
   <!-- <link href="assets/documenter.css" rel="stylesheet" type="text/css"> -->
   <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
 </head>
-<body><div class="dashboard">
-  <nav id="sidebar">
-    <header class="has-text-centered">
-      <a id="logo" href="#">
-        <img class="image" src="logo.svg" title="Documenter.jl" alt="Documenter.jl logo" style="margin: auto;">
-      </a>
-      <!-- <h1 id="pagetitle">Documenter mockup with Bootstrap</h1> -->
-      <p id="pagetitle">
-        <span id="pagetitle-overflow-box">
-          Really-really long package name (like, very long)
-        </span>
-      </p>
+<body><div id="documenter">
+  <nav class="docs-sidebar">
+    <a class="docs-logo" href="#">
+      <img src="logo.svg" title="Documenter.jl" alt="Documenter.jl logo" style="margin: auto;">
+    </a>
+    <p class="docs-package-name">
+      <span class="docs-autofit">
+        Really-really long package name (like, very long)
+      </span>
+    </p>
 
-      <div id="version-selector">
-        <select>
-          <option value="#" selected="selected">v1.1.1</option>
-          <option value="./../v1.1">v1.1</option>
-          <option value="./../v1.0">v1.0</option>
-          <option value="./../v0.7">v0.7</option>
-          <option value="./../v0.6">v0.6</option>
-          <option value="./../v0.5">v0.5</option>
-          <option value="./../v0.4">v0.4</option>
-          <option value="./../v0.3">v0.3</option>
-          <option value="./../v1.3-dev">v1.3-dev</option>
-        </select>
-      </div>
-    </header>
-
-    <form id="search-form" action="#" name="search-form">
-      <input id="search-query" name="q" type="text" placeholder="Search the docs" />
+    <form class="docs-search" action="#" name="search-form">
+      <input class="docs-search-query" name="q" type="text" placeholder="Search the docs" />
     </form>
 
-    <ul id="sidebar-menu">
+    <ul class="docs-menu">
       <li><a class="tocitem" href="#">Home</a></li>
       <li>
         <span class="tocitem">Manual</span>
@@ -96,12 +79,31 @@
       </li>
       <li><a class="tocitem" href="#">Contributing</a></li>
     </ul>
+
+    <div class="docs-version-selector field has-addons">
+      <div class="control"><span class="docs-label button is-static is-size-7">Version</span></div>
+      <div class="docs-selector control is-expanded">
+        <div class="is-fullwidth is-size-7 select">
+          <select id="documenter-version-selector">
+            <option value="#" selected="selected">v1.1.1</option>
+            <option value="./../v1.1">v1.1</option>
+            <option value="./../v1.0">v1.0</option>
+            <option value="./../v0.7">v0.7</option>
+            <option value="./../v0.6">v0.6</option>
+            <option value="./../v0.5">v0.5</option>
+            <option value="./../v0.4">v0.4</option>
+            <option value="./../v0.3">v0.3</option>
+            <option value="./../v1.3-dev">v1.3-dev</option>
+          </select>
+        </div>
+      </div>
+    </div>
   </nav>
 
   <!--------------------------------------------------------------------------------------->
-  <div id="main" class="dashboard-main is-scrollable">
+  <div class="docs-main">
     <!-- <div class="ui-mask"></div> -->
-    <header id="navbar">
+    <header class="docs-navbar">
       <nav class="breadcrumb">
         <ul class="is-hidden-mobile">
           <li class=""><a href="">Home</a></li>
