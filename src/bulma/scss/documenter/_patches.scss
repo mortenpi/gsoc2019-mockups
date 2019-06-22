@@ -32,3 +32,19 @@
     }
   }
 }
+
+// Bold code spans
+.content {
+  code {
+    font-weight: inherit;
+  }
+}
+
+// We want to be able to disable certain breadcrumb components
+.breadcrumb a.is-disabled {
+  cursor: default;
+  pointer-events: none;
+  &, &:hover{
+    color: $breadcrumb-item-disabled-color;
+  }
+}

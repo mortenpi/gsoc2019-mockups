@@ -12,7 +12,7 @@
 
 /* */
 h1, h2, h3, h4, h5, h6 {
-  .heading-anchor {
+  .docs-heading-anchor {
     visibility: hidden;
     vertical-align: middle;
     margin-left: 0.5em;
@@ -24,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
     }
   }
 
-  &:hover .heading-anchor {
+  &:hover .docs-heading-anchor {
     visibility: visible;
   }
 }

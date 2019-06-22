@@ -74,21 +74,6 @@
         max-width: $sidebar-title-width;
       }
     }
-    // The version selector (optional). This is
-    // .docs-version-selector {
-    //   @extend .has-text-centered;
-    //   span.select {
-    //     @extend .is-rounded;
-    //     select {
-    //       width: 0.4 * $sidebar-width;
-    //       text-align: center;
-    //       text-align-last: center;
-    //     }
-    //   }
-    //   &.visible {
-    //     display: block;
-    //   }
-    // }
 
     // The version selector (optional). It is hidden by default, but can be toggled by JS
     // if there actually are some versions to display.
@@ -224,25 +209,23 @@
         flex-grow: 1;
       }
 
-      .right {
+      .docs-right {
         display: flex;
-        > * {
+        .docs-icon, .docs-label, .docs-sidebar-button {
           display: inline-block;
         }
-        .edit-page {
-          white-space: nowrap;
-          margin: auto 0;
-          .edit-page-text {
-            @extend .is-hidden-mobile;
-            padding: 0;
-          }
+        white-space: nowrap;
+        .docs-label {
+          padding: 0;
+          margin-left: 0.3em;
         }
-        .sidebar-button {
-          @extend .is-hidden-tablet;
+        .docs-sidebar-button {
           font-size: 1.5rem;
           margin: auto 0 auto 1rem;
         }
       }
+
+      // ensure vertical middle alignment of everything in the navbar
       > * {
         margin: auto 0;
       }
@@ -270,6 +253,10 @@
           -webkit-transition-duration: 0.7s; /* Safari */
         }
       }
+    }
+
+    section.footnotes {
+      border-top: 1px solid $border;
     }
   }
 }

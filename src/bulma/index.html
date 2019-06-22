@@ -107,25 +107,25 @@
       <nav class="breadcrumb">
         <ul class="is-hidden-mobile">
           <li class=""><a href="">Home</a></li>
-          <li class=""><a href="">This page</a></li>
+          <li class=""><a href="" class="is-disabled">This page</a></li>
           <li class=""><a href="">Has a</a></li>
-          <li class=""><a href="">Rather long</a></li>
+          <li class=""><a href="" class="is-disabled">Rather long</a></li>
           <li class="is-active"><a href="">Breadcrumb</a></li>
         </ul>
         <ul class="is-hidden-tablet">
           <li class="is-active"><a href="">Breadcrumb</a></li>
         </ul>
       </nav>
-      <div class="right">
-        <a class="edit-page" href="#" title="Edit on GitHub">
-          <span class="fab"></span>
-          <span class="edit-page-text is-hidden-mobile">Edit on GitHub</span>
+      <div class="docs-right">
+        <a class="docs-edit-link" href="#" title="Edit on GitHub">
+          <span class="fab docs-icon"></span>
+          <span class="docs-label is-hidden-mobile">Edit on GitHub</span>
         </a>
-        <a id="sidebar-button" class="fa fa-bars sidebar-button" href="#"></a>
+        <a id="documenter-sidebar-button" class="docs-sidebar-button fa fa-bars is-hidden-tablet" href="#"></a>
       </div>
     </header>
 
-    <article class="content" id="document">
+    <article class="content" id="documenter-page">
     <h1 id="link-1">
       Page <code>h1</code> heading
       <a class="heading-anchor" href="#link-1" title="Permalink"></a>
@@ -199,8 +199,9 @@
       The simple stuff
       <a class="heading-anchor" href="#link-3" title="Permalink"></a>
     </h2>
-    <p>You can use all the usual markdown syntax, such as <strong>bold text</strong>and <em>italic text</em>.
+    <p>You can use all the usual markdown syntax, such as <strong>bold text</strong> and <em>italic text</em>.
       You can also write inline code that, unfortunately, does not get highlighted: <code>foo()</code>.
+      Inline code spans can also be italic (<em><code>foo()</code></em>) and bold (<strong><code>foo()</code></strong>)
     </p>
     <p>Need to write more code? No worries, code blocks have you covered:</p>
     <pre><code class="language-none">This is a code block.
@@ -308,7 +309,7 @@ julia> workers()
  3</code></pre>
       </div>
       <footer>
-        <a class="source-link" target="_blank" href="#">source</a>
+        <a class="docstring-source-link" target="_blank" href="#">source</a>
       </footer>
     </section>
   </article>
@@ -538,7 +539,7 @@ julia> workers()
   </h2>
 
   <p>As the last thing on the page we'll collect all the footnote definitions, if there are any.</p>
-  <section class="footnotes is-size-7"  style="border-top: 1px solid lightgrey;">
+  <section class="footnotes is-size-7">
     <ul>
       <li id="footnote-Clarke61" class="footnote">
         <a class="tag" href="#footnote-Clarke61">Clarke61</a>:
