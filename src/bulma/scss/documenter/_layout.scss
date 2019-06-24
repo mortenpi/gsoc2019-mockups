@@ -59,6 +59,7 @@
     }
     // 2. The site name, from the sitename keyword (optional)
     .docs-package-name {
+      flex-shrink: 0;
       font-size: $sidebar-title-font-size;
       font-weight: $weight-bold;
       text-align: center;

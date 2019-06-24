@@ -26,9 +26,15 @@
   <!-- Fonts -->
   <!-- <link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"/> -->
 
-  <!-- <script>
+  <script>
     documenterBaseURL="."
-  </script> -->
+    var DOC_VERSIONS = [
+      "these",
+      "come",
+      "from",
+      "versions.js",
+    ]
+  </script>
 
   <script data-main="documenter" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js"></script>
   <!-- <link href="assets/documenter.css" rel="stylesheet" type="text/css"> -->
@@ -85,15 +91,7 @@
       <div class="docs-selector control is-expanded">
         <div class="is-fullwidth is-size-7 select">
           <select id="documenter-version-selector">
-            <option value="#" selected="selected">v1.1.1</option>
-            <option value="./../v1.1">v1.1</option>
-            <option value="./../v1.0">v1.0</option>
-            <option value="./../v0.7">v0.7</option>
-            <option value="./../v0.6">v0.6</option>
-            <option value="./../v0.5">v0.5</option>
-            <option value="./../v0.4">v0.4</option>
-            <option value="./../v0.3">v0.3</option>
-            <option value="./../v1.3-dev">v1.3-dev</option>
+            <option value="#" selected="selected">static</option>
           </select>
         </div>
       </div>
@@ -559,7 +557,7 @@ julia> workers()
 
 </article>
 
-<footer>
+<footer class="footer">
   <nav class="columns">
     <a class="column has-text-left" title="Previous" href="#">
       &laquo;
@@ -571,7 +569,8 @@ julia> workers()
     </a>
   </nav>
 
-  <div id="colophon" class="footer is-size-7 has-text-centered">
+  <!-- <div id="colophon" class="footer is-size-7 has-text-centered"> -->
+  <div class="docs-colophon is-size-7 has-text-centered">
     <p>
       Created with
       <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a>
