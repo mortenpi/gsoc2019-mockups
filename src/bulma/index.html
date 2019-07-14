@@ -14,11 +14,13 @@
   <!-- Must include 3 different stylesheets for Font Awesome -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/fontawesome.min.css" rel="stylesheet" type="text/css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/solid.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/regular.min.css" rel="stylesheet" type="text/css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/brands.min.css" rel="stylesheet" type="text/css">
   <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet" type="text/css"> -->
   <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"> -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.2/katex.min.css" rel="stylesheet" type="text/css">
   <link id="themecss" href="documenter.css" rel="stylesheet" type="text/css">
+  <link href="sidebar.css" rel="stylesheet" type="text/css">
 
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"> -->
   <!-- <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script> -->
@@ -55,13 +57,13 @@
       <input class="docs-search-query" name="q" type="text" placeholder="Search the docs" />
     </form>
 
-    <ul class="docs-menu">
+    <ul id="sidebar">
       <li><a class="tocitem" href="#">Home</a></li>
       <li>
         <span class="tocitem">Manual</span>
         <ul>
           <li><a class="tocitem" href="#man/examples/">Examples</a></li>
-          <li>
+          <li class="is-active">
             <a class="tocitem is-active" href="#man/guide/">Guide</a>
             <ul class="internal">
               <li><a class="tocitem" href="#Package-Features-1">Package Features</a></li>
@@ -79,11 +81,33 @@
       <li>
         <span class="tocitem">Library</span>
         <ul>
-          <li><a class="tocitem" href="lib/public/">Public</a></li>
+          <li>
+          <input id="menu-3-1" type="checkbox" class="collapse-toggle" />
+          <label class="tocitem" for="menu-3-1">Public</label>
+          <ul class="collapsed">
+            <li><a class="tocitem" href="#">C1</a></li>
+            <li>
+              <input id="menu-3-1-2" type="checkbox" class="collapse-toggle" />
+              <label class="tocitem" for="menu-3-1-2">Public</label>
+              <ul class="collapsed">
+                <li><a class="tocitem" href="#">C2-1</a></li>
+                <li><a class="tocitem" href="#">C2-2</a></li>
+                <li><a class="tocitem" href="#">C2-3</a></li>
+              </ul>
+            </li>
+            <li><a class="tocitem" href="#">C3</a></li>
+          </ul>
+          </li>
           <li><a class="tocitem" href="lib/internals/">Internals</a></li>
         </ul>
       </li>
-      <li><a class="tocitem" href="#">Contributing</a></li>
+      <li>
+        <a class="tocitem" href="#">
+<i class="fas fa-external-link-alt"></i>
+        Contributing
+        
+        </a>
+      </li>
     </ul>
 
     <div class="docs-version-selector field has-addons">
