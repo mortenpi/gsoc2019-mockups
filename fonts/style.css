@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+pre {
+  border: 1px solid lightgray;
+  padding: 1rem;
+  line-height: 1.25;
+}
+
+body.font-simple-monospace pre {
+  font-family: monospace;
+}
+
+body.font-simple-roboto pre {
+  font-family: 'Roboto Mono', monospace;
+}
+
+body.font-roboto-fallbacks pre {
+  font-family: 'Roboto Mono', 'SFMono-Regular', 'Menlo', 'Consolas', 'Liberation Mono', 'DejaVu Sans Mono', monospace
+}
+
+body.font-fallbacks pre {
+  font-family: 'SFMono-Regular', 'Menlo', 'Consolas', 'Liberation Mono', 'DejaVu Sans Mono', monospace
+}
+
+body.font-documenter pre {
+  font-family: 'Roboto Mono', 'Monaco', courier, monospace;
+}
+
+body.borders pre span {
+  border-left: 1px dashed lightblue;
+  border-top: 1px dashed lightblue;
+}
