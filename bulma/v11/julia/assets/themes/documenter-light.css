@@ -7256,6 +7256,7 @@ h1:hover .docs-heading-anchor, h2:hover .docs-heading-anchor, h3:hover .docs-hea
   #documenter .docs-main {
     width: 100%; }
     #documenter .docs-main > article {
+      max-width: 52rem;
       margin-left: auto;
       margin-right: auto;
       margin-bottom: 1rem;

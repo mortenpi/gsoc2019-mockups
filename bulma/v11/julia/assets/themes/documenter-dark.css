@@ -7317,6 +7317,7 @@ html.theme--documenter-dark {
     html.theme--documenter-dark #documenter .docs-main {
       width: 100%; }
       html.theme--documenter-dark #documenter .docs-main > article {
+        max-width: 52rem;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 1rem;
