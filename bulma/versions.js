@@ -1,4 +1,12 @@
 var DOC_VERSIONS = [
+  "v12",
+  "v11/julia",
+  "v11/documenter",
+  "v10/julia",
+  "v10/documenter",
+  "v9/julia",
+  "v9/documenter",
+  "v8",
   "v7/julia",
   "v7/documenter",
   "v6",
