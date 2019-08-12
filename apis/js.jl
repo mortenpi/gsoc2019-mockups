@@ -301,3 +301,69 @@ push!(r, JSAPI.JSSnippet(["jquery", "lunr", "lodash"], ["\$", "lunr"],
     String(read("search.js"))
 ))
 JSAPI.writejs("docs/build/assets/documenter-search.js", r)
+
+struct JSSnippetParseError
+    key :: String
+    line :: String
+    lineno :: Integer
+end
+
+function Base.showerror(io::IO, err::JSSnippetParseError)
+    println(io, "JSSnippetParseError: bad '$(err.key)' declaration on line $(err.lineno)")
+    println(io, "  attempted to parse: '$(err.line)'")
+end
+
+"""
+    read_js_snippet(filename::AbstractString) -> JSSnippet
+    read_js_snippet(io::IO) -> JSSnippet
+
+Parses a JS snippet file into a [`JSSnippet`](@ref) object.
+"""
+function read_js_snippet end
+
+read_js_snippet(filename::AbstractString; kwargs...) = open(filename, "r") do io
+    read_js_snippet(io; kwargs...)
+end
+
+function read_js_snippet(io::IO)
+    libraries = String[]
+    arguments = String[]
+    lineno = 1
+    while true
+        pos = position(io)
+        line = readline(io)
+        m = match(r"^//\s*([a-z]+):(.*)$", line)
+        if m === nothing
+            seek(io, pos) # undo the last readline() call
+            break
+        end
+        if m[1] == "libraries"
+            @info "Found: $(m[1])" m[2]
+            libraries = strip.(split(m[2], ","))
+            if any(s -> match(r"^[a-z_]+$", s) === nothing, libraries)
+                error("Unable to parse a library declaration '$(line)' on line $(lineno)")
+            end
+        elseif m[1] == "arguments"
+            args = strip.(split(m[2], ","))
+        end
+        lineno += 1
+    end
+    snippet = String(read(io))
+    JSAPI.JSSnippet(libraries, arguments, snippet)
+end
+
+let b = IOBuffer()
+    write(b, JSAPI.js"""
+    // libraries: jquery, xyz
+    // args: $
+    /// libraries: j_query*
+    $(document).ready(function() {
+        hljs.initHighlighting();
+    })
+    """)
+    seek(b, 0)
+    read_js_snippet(b)
+end
+
+Base.:(==)(library::JSAPI.JSLibrary, s::AbstractString) = (library.name == s)
+Base.:(==)(s::AbstractString, library::JSAPI.JSLibrary) = (library == s)
