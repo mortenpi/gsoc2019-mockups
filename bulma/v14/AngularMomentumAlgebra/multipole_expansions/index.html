@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Multipole expansions · AngularMomentumAlgebra</title><link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css" rel="stylesheet" type="text/css"/><link href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js" data-main="../assets/documenter.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit">AngularMomentumAlgebra</span></div><form class="docs-search" action="../search/"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../">Home</a></li><li><a class="tocitem" href="../definitions/">Definitions</a></li><li><a class="tocitem" href="../common/">Common routines</a></li><li><a class="tocitem" href="../tensors/">Tensors</a></li><li><a class="tocitem" href="../coulomb/">Coulomb interaction</a></li><li class="is-active"><a class="tocitem" href>Multipole expansions</a><ul class="internal"><li><a class="tocitem" href="#Spherical-tensors-1"><span>Spherical tensors</span></a></li></ul></li><li><a class="tocitem" href="../energy_expressions/">Energy expressions</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Multipole expansions</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Multipole expansions</a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/JuliaAtoms/AngularMomentumAlgebra.jl/blob/master/docs/src/multipole_expansions.md" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="Multipole-expansions-1">Multipole expansions<a class="docs-heading-anchor" href="#Multipole-expansions-1" title="Permalink"></a></h1><p>The matrix element of scalar product of two tensors acting on different coordinates is given by</p><div>\[\begin{equation}
+\begin{aligned}
+&amp;\matrixel{n_aj_am_a;n_bj_bm_b}{[\tensor{P}^{(k)}(1)\cdot\tensor{Q}^{(k)}(2)]}{n_cj_cm_c;n_dj_dm_d}\\
+=&amp;
+\frac{1}{\angroot{j_aj_b}}
+\sum_\alpha(-)^{-\alpha}
+C_{j_cm_c;k,\alpha}^{j_am_a}
+C_{j_dm_d;k,-\alpha}^{j_bm_b}\\
+&amp;\times
+\redmatrixel{n_aj_a}{\tensor{P}^{(k)}(1)}{n_cj_c}
+\redmatrixel{n_bj_b}{\tensor{Q}^{(k)}(2)}{n_dj_d}
+\end{aligned}
+\tag{V13.1.26}
+\end{equation}\]</div><p>Since the <a href="../definitions/#Clebsch–Gordan-coefficients-1">Clebsch–Gordan coefficients</a> can be rewritten using 3j symbols and the 3j symbols vanish unless <span>$m_c + \alpha - m_3 = m_d - \alpha - m_b = 0$</span>, we have</p><div>\[\begin{equation}
+\alpha = m_a - m_c = m_d-m_b
+\implies
+-\alpha + m_a + m_b = m_b + m_c.
+\end{equation}\]</div><article class="docstring"><header><a class="docstring-binding" id="AngularMomentumAlgebra.multipole_expand_scalar_product" href="#AngularMomentumAlgebra.multipole_expand_scalar_product"><code>AngularMomentumAlgebra.multipole_expand_scalar_product</code></a> — <span class="docstring-category">Function</span>.</header><section><div><pre><code class="language-julia">multipole_expand_scalar_product(a, b, P, Q, c, d)</code></pre><p>Multipole expand the matrix element <code>⟨ab|P⋅Q|cd⟩</code>, where the tensor <code>P</code> acts on orbitals <code>a</code> &amp; <code>c</code>, and the tensor <code>Q</code> acts on orbitals <code>b</code> &amp; <code>d</code>. The definition is taken from Eq. (13.1.26) of Varshalovich (1988).</p></div><a class="docs-sourcelink" target="_blank" href="https://github.com/JuliaAtoms/AngularMomentumAlgebra.jl/blob/4b7f8bcc671592635b6ac57b910a5b30d11bcf44/src/multipole_expansion.jl#L3-L10">source</a></section></article><article class="docstring"><header><a class="docstring-binding" id="AngularMomentumAlgebra.multipole_expand" href="#AngularMomentumAlgebra.multipole_expand"><code>AngularMomentumAlgebra.multipole_expand</code></a> — <span class="docstring-category">Function</span>.</header><section><div><pre><code class="language-julia">multipole_expand(integral::OrbitalMatrixElement{2,A,CoulombInteraction,B})</code></pre><p>Multipole-expand the two-body integral resulting from the Coulomb repulsion between two electrons.</p></div><a class="docs-sourcelink" target="_blank" href="https://github.com/JuliaAtoms/AngularMomentumAlgebra.jl/blob/4b7f8bcc671592635b6ac57b910a5b30d11bcf44/src/multipole_expansion.jl#L90-L95">source</a></section><section><div><pre><code class="language-none">multipole_expand(integral::NBodyTermFactor)</code></pre><p>Dummy method that returns <code>integral</code> unchanged, used for all <code>NBodyTermFactor</code>s that are <em>not</em> to be multipole-expanded.</p></div><a class="docs-sourcelink" target="_blank" href="https://github.com/JuliaAtoms/AngularMomentumAlgebra.jl/blob/4b7f8bcc671592635b6ac57b910a5b30d11bcf44/src/multipole_expansion.jl#L111-L116">source</a></section></article><h2 id="Spherical-tensors-1">Spherical tensors<a class="docs-heading-anchor" href="#Spherical-tensors-1" title="Permalink"></a></h2><p>For spherical tensors, we can insert the expression for the reduced matrix elements (V13.2.107) into (V13.1.26) above, to get</p><div>\[\begin{equation}
+\begin{aligned}
+\implies
+&amp;\matrixel{\ell_am_a;\ell_bm_b}{[\tensor{C}^{(k)}(1)\cdot\tensor{C}^{(k)}(2)]}{\ell_cm_c;\ell_dm_d}\\
+=&amp;
+\frac{1}{\angroot{\ell_a\ell_b}}
+\sum_\alpha(-)^{-\alpha}
+C_{\ell_cm_c;k,\alpha}^{\ell_am_a}
+C_{\ell_dm_d;k,-\alpha}^{\ell_bm_b}
+\redmatrixel{\ell_a}{\tensor{C}^{(k)}(1)}{\ell_c}
+\redmatrixel{\ell_b}{\tensor{C}^{(k)}(2)}{\ell_d}\\
+=&amp;
+\frac{\angroot{\ell_c\ell_d}}{\angroot{\ell_a\ell_b}}
+C_{\ell_c0;k0}^{\ell_a0}
+C_{\ell_d0;k0}^{\ell_b0}
+\sum_\alpha(-)^{-\alpha}
+C_{\ell_cm_c;k,\alpha}^{\ell_am_a}
+C_{\ell_dm_d;k,-\alpha}^{\ell_bm_b}\\
+=&amp;\begin{aligned}[t]
+\sum_\alpha&amp;
+(-)^{-\alpha + m_a + m_b}
+\angroot{\ell_a\ell_b\ell_c\ell_d}\\
+&amp;\times
+\begin{pmatrix}
+\ell_c&amp;k&amp;\ell_a\\
+m_c&amp;\alpha&amp;-m_a
+\end{pmatrix}
+\begin{pmatrix}
+\ell_d&amp;k&amp;\ell_b\\
+m_d&amp;-\alpha&amp;-m_b
+\end{pmatrix}\\
+&amp;\times
+\begin{pmatrix}
+\ell_c&amp;k&amp;\ell_a\\0&amp;0&amp;0
+\end{pmatrix}
+\begin{pmatrix}
+\ell_d&amp;k&amp;\ell_b\\0&amp;0&amp;0
+\end{pmatrix}.
+\end{aligned}
+\end{aligned}
+\end{equation}\]</div></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../coulomb/">« Coulomb interaction</a><a class="docs-footer-nextpage" href="../energy_expressions/">Energy expressions »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Friday 23 August 2019 11:52">Friday 23 August 2019</span>. Using Julia version 1.2.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
