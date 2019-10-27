@@ -1127,7 +1127,7 @@ html.theme--documenter-dark {
     color: #e74c3c;
     font-size: 0.875em;
     font-weight: normal;
-    padding: 0.25em 0.5em 0.25em; }
+    padding: 0.1em; }
   html.theme--documenter-dark hr {
     background-color: #282f2f;
     border: none;
@@ -7255,6 +7255,10 @@ html.theme--documenter-dark {
       border-bottom: 1px solid #5e6d6f; }
       html.theme--documenter-dark .docstring > header code {
         background-color: transparent; }
+      html.theme--documenter-dark .docstring > header .docstring-binding {
+        margin-right: 0.3em; }
+      html.theme--documenter-dark .docstring > header .docstring-category {
+        margin-left: 0.3em; }
     html.theme--documenter-dark .docstring > section {
       position: relative;
       padding: 1.5rem;
